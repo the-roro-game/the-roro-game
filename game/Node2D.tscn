@@ -1,7 +1,0 @@
-[gd_scene format=2]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="TextEdit" type="TextEdit" parent="."]
-margin_right = 829.0
-margin_bottom = 175.0
