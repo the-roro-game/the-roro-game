@@ -1,6 +1,20 @@
 using Godot;
 using System;
 using therorogame.data;
+using Path = System.IO.Path;
+
+public class PossibleDirections
+{
+    public bool Up = false;
+    public bool Right = false;
+    public bool Down = false;
+    public bool Left = false;
+
+    public override string ToString()
+    {
+        return $"{(Up ? '^' : 'x')}{(Right ? '>' : 'x')}{(Down ? 'V' : 'x')}{(Left ? '<' : 'x')}";
+    }
+}
 
 public class LevelsManager : Node
 {
@@ -17,15 +31,105 @@ public class LevelsManager : Node
         }
     }
 
-    [Export] public BaseLevel StartLevel;
+    private const int WIDTH = 4;
+    private const int HEIGHT = 2;
+    public BaseLevel[,] Map = new BaseLevel[HEIGHT, WIDTH];
 
-    public static string RootLevelPath = "res://data/levels";
-    public static string StartLevelName = "0";
+    private delegate string CellRenderer(int x, int y);
 
-    public void LoadLevel(string level)
+    public string RootLevelPath = "res://data/levels";
+
+    public override void _Ready()
     {
-        BaseLevel loadedLevel =
-            ResourceLoader.Load<BaseLevel>(RootLevelPath + "/" + level+".tres");
-        CurrLevel = loadedLevel;
+        UpdateLevelMap();
+        ShowMap((x, y) => $"{Map[y, x].ToString()}\t");
+        ShowMap((x, y) =>
+        {
+            PossibleDirections directions = GetPossibleDirections(x, y);
+            return $"{directions.ToString()}\t";
+        });
+    }
+
+    private void ShowMap(CellRenderer Renderer)
+    {
+        String matrix = "";
+        for (int i = 0; i < HEIGHT; i++)
+        {
+            for (int j = 0; j < WIDTH; j++)
+            {
+                if (Map[i, j] != null)
+                {
+                    matrix += Renderer(j, i);
+                }
+                else
+                {
+                    matrix += "null\t";
+                }
+            }
+
+            matrix += "\n";
+        }
+
+        GD.Print(matrix);
+    }
+
+
+    public void UpdateLevelMap()
+    {
+        var dir = new Directory();
+        if (dir.Open(RootLevelPath) == Error.Ok)
+        {
+            dir.ListDirBegin(true, true);
+            var filename = dir.GetNext();
+            while (filename != "")
+            {
+                GD.Print(filename);
+                int RoomNb = Path.GetFileNameWithoutExtension(filename).ToInt();
+                if (IsValidRoom(RoomNb))
+                {
+                    int x = RoomNb % WIDTH;
+                    int y = RoomNb / WIDTH;
+                    BaseLevel level = ResourceLoader.Load<BaseLevel>(RootLevelPath + "/" + filename);
+                    Map[y, x] = level;
+                }
+
+                filename = dir.GetNext();
+            }
+
+            dir.ListDirEnd();
+        }
+        else
+        {
+            GD.PrintErr("can't load map");
+        }
+    }
+
+    public PossibleDirections GetPossibleDirections(int x, int y)
+    {
+        var possible = new PossibleDirections
+        {
+            Up = y > 0 && y < HEIGHT && Map[y - 1, x] != null,
+            Down = y >= 0 && (y < HEIGHT - 1) && Map[y + 1, x] != null,
+            Left = x > 0 && x < WIDTH && Map[y, x - 1] != null,
+            Right = x >= 0 && (x < WIDTH - 1) && Map[y, x + 1] != null
+        };
+
+        return possible;
+    }
+
+    private int MaxRoom()
+    {
+        return (WIDTH * HEIGHT) - 1;
+    }
+
+    private bool IsValidRoom(int room)
+    {
+        return room >= 0 && room <= MaxRoom();
+    }
+
+
+    public void LoadLevel(int x, int y)
+    {
+        CurrLevel = Map[y, x];
     }
 }
