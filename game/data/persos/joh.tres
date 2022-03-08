@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://data/BaseCharacter.cs" type="Script" id=1]
+[ext_resource path="res://animations/persos/joh.tres" type="SpriteFrames" id=2]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Johanna"
+Health = 100
+Frames = ExtResource( 2 )
+DefaultAnim = "idle"

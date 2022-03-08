@@ -1,29 +1,32 @@
 using Godot;
-using System;
+using therorogame.data;
 
-public class SelectionScreen : Node2D
+namespace therorogame.scripts
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public class SelectionScreen : Node2D
     {
-    }
+        // Declare member variables here. Examples:
+        // private int a = 2;
+        // private string b = "text";
 
-    public void OnSelectCharacter()
-    {
-        var charactersList = GetNode<CharactersList>("CharactersList");
-        CharacterItem characterItem = charactersList.currCharacter;
-        if (characterItem == null)
+        // Called when the node enters the scene tree for the first time.
+        public override void _Ready()
         {
-            charactersList.RenderMessage("no character selected");
         }
-        else
+
+        public void OnSelectCharacter()
         {
-            charactersList.ClearMessage();
-            GD.Print(charactersList.currCharacter.Name);
+            var charactersList = GetNode<CharactersList>("CharactersList");
+            BaseCharacter characterItem = charactersList.currCharacter.Character;
+            if (characterItem == null)
+            {
+                charactersList.RenderMessage("no character selected");
+            }
+            else
+            {
+                charactersList.ClearMessage();
+                GD.Print(characterItem.Name);
+            }
         }
     }
 }

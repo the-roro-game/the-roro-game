@@ -1,18 +1,19 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using therorogame.data;
 using Path = System.IO.Path;
 
 public class CharacterItem
 {
-    public string Name;
+    public BaseCharacter Character;
     public AnimatedSprite AnimatedSprite = new AnimatedSprite();
 
-    public CharacterItem(string name, SpriteFrames frames, string default_anim)
+    public CharacterItem(BaseCharacter character)
     {
-        Name = name;
-        AnimatedSprite.Frames = frames;
-        AnimatedSprite.Animation = default_anim;
+        Character = character;
+        AnimatedSprite.Frames = character.Frames;
+        AnimatedSprite.Animation = character.DefaultAnim;
     }
 }
 
@@ -36,7 +37,7 @@ public class CharactersList : ItemList
         foreach (var characterItem in CharacterItems)
         {
             SpriteFrames spriteFrames = characterItem.AnimatedSprite.Frames;
-            AddItem(characterItem.Name, spriteFrames.GetFrame(characterItem.AnimatedSprite.Animation, 0));
+            AddItem(characterItem.Character.Name, spriteFrames.GetFrame(characterItem.AnimatedSprite.Animation, 0));
         }
 
         MaxColumns = CharacterItems.Count;
@@ -58,10 +59,12 @@ public class CharactersList : ItemList
         var file_name = dir.GetNext();
         while (file_name != "")
         {
-            SpriteFrames spriteFrames = GD.Load<SpriteFrames>(CharactersPath + "/" + file_name);
+            GD.Print(CharactersPath + "/" + file_name);
+            BaseCharacter character =
+                ResourceLoader.Load<BaseCharacter>(CharactersPath + "/" + file_name);
+            GD.Print(character.Name);
 
-            CharacterItem characterItem =
-                new CharacterItem(Path.GetFileNameWithoutExtension(file_name), spriteFrames, "idle");
+            CharacterItem characterItem = new CharacterItem(character);
             CharacterItems.Add(characterItem);
             file_name = dir.GetNext();
         }
