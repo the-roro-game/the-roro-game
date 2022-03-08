@@ -35,7 +35,6 @@ public class Main : Node2D
         Score = 0;
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
-        player.Start(startPosition.Position);
 
         GetNode<HUD>("HUD").ShowMessage("Get ready");
 

@@ -1,30 +1,33 @@
 using Godot;
 using System;
+using therorogame.data;
+using therorogame.scripts;
 
-public class Player : Area2D
+public class Player : KinematicBody2D
 {
     [Export] public int Speed = 400;
     private Vector2 ScreenSize;
 
+    public override void _Ready()
+    {
+        Events events = (Events) GetNode("/root/events");
+        Global global = (Global) GetNode("/root/Global");
+        events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
+        UpdateCharacterStyle(global.CurrCharacter);
+    }
+
     [Signal]
     public delegate void Hit();
 
-    public override void _Ready()
+    public override void _PhysicsProcess(float delta)
     {
-        ScreenSize = GetViewportRect().Size;
-        Hide();
-    }
-
-    public override void _Process(float delta)
-    {
-        var velocity = Vector2.Zero;
-        velocity.x = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
-        velocity.y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
-
+        var inputVector = Vector2.Zero;
+        inputVector.x = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
+        inputVector.y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
         var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        if (velocity.Length() > 0)
+        if (inputVector != Vector2.Zero)
         {
-            velocity = velocity.Normalized() * Speed;
+            inputVector = inputVector.Normalized() * Speed;
             animatedSprite.Play();
         }
         else
@@ -32,26 +35,10 @@ public class Player : Area2D
             animatedSprite.Stop();
         }
 
-        if (velocity.x != 0)
-        {
-            animatedSprite.Animation = "walk";
-            animatedSprite.FlipV = false;
-            // See the note below about boolean assignment.
-            animatedSprite.FlipH = velocity.x < 0;
-        }
-        else if (velocity.y != 0)
-        {
-            animatedSprite.Animation = "up";
-            animatedSprite.FlipV = velocity.y > 0;
-        }
-
-
-        Position += velocity * delta;
-        Position = new Vector2(
-            x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
-            y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
-        );
+        MoveAndCollide(inputVector * delta);
+       
     }
+
 
     public void OnPlayerBodyEntered(PhysicsBody2D body2D)
     {
@@ -60,10 +47,13 @@ public class Player : Area2D
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
     }
 
-    public void Start(Vector2 pos)
+    public void UpdateCharacterStyle(BaseCharacter character)
     {
-        Position = pos;
-        Show();
-        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
+        GetNode<AnimatedSprite>("AnimatedSprite").Frames = character.Frames;
+    }
+
+    public void OnCharacterChange(BaseCharacter character)
+    {
+        UpdateCharacterStyle(character);
     }
 }

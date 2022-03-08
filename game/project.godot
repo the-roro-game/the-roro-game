@@ -16,6 +16,8 @@ run/main_scene="res://scenes/SelectionScreen.tscn"
 [autoload]
 
 Global="*res://scripts/Global.cs"
+events="*res://scripts/Events.cs"
+lm="*res://scripts/LevelsManager.cs"
 
 [display]
 

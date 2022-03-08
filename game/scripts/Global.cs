@@ -1,21 +1,32 @@
 using Godot;
 using System;
+using therorogame.data;
+using therorogame.scripts;
 
 public class Global : Node
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    private BaseCharacter _currCharacter;
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public BaseCharacter CurrCharacter
     {
-        
+        get => _currCharacter;
+        set
+        {
+            GD.Print("changing character:", value.Name);
+            _currCharacter = value;
+        }
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+   
+
+    public override void _Ready()
+    {
+        Events events = (Events) GetNode("/root/events");
+        events.Connect(nameof(Events.CharacterChange), this, nameof(UpdateCurrentCharacter));
+    }
+
+    public void UpdateCurrentCharacter(BaseCharacter newCharacter)
+    {
+        CurrCharacter = newCharacter;
+    }
 }

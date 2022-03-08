@@ -5,28 +5,16 @@ namespace therorogame.scripts
 {
     public class SelectionScreen : Node2D
     {
-        // Declare member variables here. Examples:
-        // private int a = 2;
-        // private string b = "text";
-
-        // Called when the node enters the scene tree for the first time.
         public override void _Ready()
         {
+            Events events = (Events) GetNode("/root/events");
+            events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
         }
 
-        public void OnSelectCharacter()
+        public void OnCharacterChange(BaseCharacter character)
         {
-            var charactersList = GetNode<CharactersList>("CharactersList");
-            BaseCharacter characterItem = charactersList.currCharacter.Character;
-            if (characterItem == null)
-            {
-                charactersList.RenderMessage("no character selected");
-            }
-            else
-            {
-                charactersList.ClearMessage();
-                GD.Print(characterItem.Name);
-            }
+            LevelsManager lm = (LevelsManager) GetNode("/root/lm");
+            lm.LoadLevel(LevelsManager.StartLevelName);
         }
     }
 }

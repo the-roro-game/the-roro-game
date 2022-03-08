@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using therorogame.data;
+using therorogame.scripts;
 using Path = System.IO.Path;
 
 public class CharacterItem
@@ -59,10 +60,8 @@ public class CharactersList : ItemList
         var file_name = dir.GetNext();
         while (file_name != "")
         {
-            GD.Print(CharactersPath + "/" + file_name);
             BaseCharacter character =
                 ResourceLoader.Load<BaseCharacter>(CharactersPath + "/" + file_name);
-            GD.Print(character.Name);
 
             CharacterItem characterItem = new CharacterItem(character);
             CharacterItems.Add(characterItem);
@@ -80,6 +79,20 @@ public class CharactersList : ItemList
         currCharacter = CharacterItems[index];
         currCharacter.AnimatedSprite.Animation = "mask";
         RefreshListUi();
+    }
+
+    public void OnValidateItem()
+    {
+        Events events = (Events) GetNode("/root/events");
+        if (currCharacter == null)
+        {
+            RenderMessage("No selected character");
+        }
+        else
+        {
+            ClearMessage();
+            events.EmitSignal(nameof(Events.CharacterChange), currCharacter.Character);
+        }
     }
 
     public void RenderMessage(string msg)

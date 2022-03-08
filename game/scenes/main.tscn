@@ -6,9 +6,6 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 240, 450 )
