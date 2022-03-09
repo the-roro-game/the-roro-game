@@ -74,6 +74,7 @@ public class LevelsManager : Node
             PossibleDirections directions = GetPossibleDirections(x, y);
             return $"{directions.ToString()}\t";
         });
+        events.Connect(nameof(Events.DirectionChange), this, nameof(OnDirectionChange));
     }
 
     private void ShowMap(CellRenderer Renderer)
