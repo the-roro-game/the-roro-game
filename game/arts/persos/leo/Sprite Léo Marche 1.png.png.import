@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite Joh Profil.png.png-91345302d98a2b8a29260a33be249b17.stex"
+path="res://.import/Sprite Léo Marche 1.png.png-7f219889fc767fb0e8190cfed60c19a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Sprite Walk/Joh/Sprite Joh Profil.png.png"
-dest_files=[ "res://.import/Sprite Joh Profil.png.png-91345302d98a2b8a29260a33be249b17.stex" ]
+source_file="res://arts/persos/leo/Sprite Léo Marche 1.png.png"
+dest_files=[ "res://.import/Sprite Léo Marche 1.png.png-7f219889fc767fb0e8190cfed60c19a1.stex" ]
 
 [params]
 

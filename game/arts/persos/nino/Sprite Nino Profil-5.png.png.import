@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite Léo Marche 1.png.png-37e81c5ce7dba61106b02b1b66c68c51.stex"
+path="res://.import/Sprite Nino Profil-5.png.png-ebc1498afb907e0f9a8345e04f50a33e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Sprite Walk/Léo/Sprite Léo Marche 1.png.png"
-dest_files=[ "res://.import/Sprite Léo Marche 1.png.png-37e81c5ce7dba61106b02b1b66c68c51.stex" ]
+source_file="res://arts/persos/nino/Sprite Nino Profil-5.png.png"
+dest_files=[ "res://.import/Sprite Nino Profil-5.png.png-ebc1498afb907e0f9a8345e04f50a33e.stex" ]
 
 [params]
 

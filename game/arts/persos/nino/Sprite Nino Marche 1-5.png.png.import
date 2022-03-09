@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite Joh Marche 1.png-c8318875108b11db126e6b9f72abfe3e.stex"
+path="res://.import/Sprite Nino Marche 1-5.png.png-72e247fb1b980f5181c93cea75af2d02.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Sprite Walk/Joh/Sprite Joh Marche 1.png"
-dest_files=[ "res://.import/Sprite Joh Marche 1.png-c8318875108b11db126e6b9f72abfe3e.stex" ]
+source_file="res://arts/persos/nino/Sprite Nino Marche 1-5.png.png"
+dest_files=[ "res://.import/Sprite Nino Marche 1-5.png.png-72e247fb1b980f5181c93cea75af2d02.stex" ]
 
 [params]
 

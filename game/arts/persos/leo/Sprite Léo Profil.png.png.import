@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite M athéo Marche 1.png.png-68c186e3a8b32f72610cd388d89915dd.stex"
+path="res://.import/Sprite Léo Profil.png.png-e39974bc8ff8fdf34a35752fafe42bf1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Sprite Walk/Mathéo/Sprite M athéo Marche 1.png.png"
-dest_files=[ "res://.import/Sprite M athéo Marche 1.png.png-68c186e3a8b32f72610cd388d89915dd.stex" ]
+source_file="res://arts/persos/leo/Sprite Léo Profil.png.png"
+dest_files=[ "res://.import/Sprite Léo Profil.png.png-e39974bc8ff8fdf34a35752fafe42bf1.stex" ]
 
 [params]
 
