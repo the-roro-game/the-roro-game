@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/LevelHUD.cs" type="Script" id=1]
 [ext_resource path="res://scenes/DirectionButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://arts/gui/greenbar.png" type="Texture" id=3]
-[ext_resource path="res://scripts/PlayerHealthBar.cs" type="Script" id=4]
-[ext_resource path="res://arts/gui/emptybar.png" type="Texture" id=5]
+[ext_resource path="res://scenes/HealthDisplay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/DirectionnalCross.tscn" type="PackedScene" id=4]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -21,28 +20,29 @@ margin_right = 20.0
 margin_bottom = 10.0
 text = "Empty"
 
-[node name="CurrPos" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 20.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 364.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Directions" type="CanvasLayer" parent="."]
+[node name="HealthDisplay" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_bottom = 40.0
 
-[node name="HealthDisplay" type="Node2D" parent="."]
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="CurrPos" type="Label" parent="HBoxContainer"]
+margin_left = 204.0
+margin_right = 364.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
 
-[node name="HealthBar" type="TextureProgress" parent="HealthDisplay"]
-margin_right = 200.0
-margin_bottom = 26.0
-value = 100.0
-texture_under = ExtResource( 5 )
-texture_progress = ExtResource( 3 )
-
-[node name="HealthValues" type="Label" parent="HealthDisplay"]
-margin_left = 2.0
-margin_top = 27.0
-margin_right = 42.0
-margin_bottom = 47.0
-text = "0/0"
+[node name="DirectionnalCross" parent="." instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -203.0
+margin_top = -239.0
+margin_right = -203.0
+margin_bottom = -239.0
+rect_scale = Vector2( 0.5, 0.5 )

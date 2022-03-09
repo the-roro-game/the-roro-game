@@ -16,6 +16,11 @@ extents = Vector2( 70.697, 70 )
 extents = Vector2( 96.058, 54.431 )
 
 [node name="DirectionnalCross" type="Control"]
+margin_right = 391.008
+margin_bottom = 486.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="top" type="TouchScreenButton" parent="."]
 normal = ExtResource( 2 )

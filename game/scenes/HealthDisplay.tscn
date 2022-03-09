@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://arts/gui/emptybar.png" type="Texture" id=1]
+[ext_resource path="res://scripts/PlayerHealthBar.cs" type="Script" id=2]
+[ext_resource path="res://arts/gui/greenbar.png" type="Texture" id=3]
+
+[node name="HealthDisplay" type="Control"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 200, 25 )
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_right = 200.0
+margin_bottom = 26.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 3 )
+
+[node name="HealthValues" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 27.0
+margin_right = 42.0
+margin_bottom = 47.0
+text = "0/0"

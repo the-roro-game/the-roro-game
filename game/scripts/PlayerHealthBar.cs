@@ -2,7 +2,7 @@ using Godot;
 using System;
 using therorogame.scripts;
 
-public class PlayerHealthBar : Node2D
+public class PlayerHealthBar : Control
 {
     public Texture GreenBar = ResourceLoader.Load<Texture>("res://arts/gui/greenbar.png");
     public Texture YellowBar = ResourceLoader.Load<Texture>("res://arts/gui/yellowbar.png");
