@@ -56,8 +56,8 @@ public class LevelHUD : CanvasLayer
         inst.YOffset = y;
         inst.SetAnchorsAndMarginsPreset(layoutPreset, Control.LayoutPresetMode.KeepSize);
         inst.Text = text;
-        inst.Connect(nameof(Events.DirectionChange),)
+        // inst.Connect(nameof(Events.DirectionChange),)
     }
     
-    public 
+    // public 
 }
