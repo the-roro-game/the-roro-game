@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/LevelHUD.cs" type="Script" id=1]
 [ext_resource path="res://scenes/DirectionButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://arts/gui/greenbar.png" type="Texture" id=3]
+[ext_resource path="res://scripts/PlayerHealthBar.cs" type="Script" id=4]
+[ext_resource path="res://arts/gui/emptybar.png" type="Texture" id=5]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -23,3 +26,23 @@ margin_right = 40.0
 margin_bottom = 20.0
 
 [node name="Directions" type="CanvasLayer" parent="."]
+
+[node name="HealthDisplay" type="Node2D" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HealthBar" type="TextureProgress" parent="HealthDisplay"]
+margin_right = 200.0
+margin_bottom = 26.0
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 3 )
+
+[node name="HealthValues" type="Label" parent="HealthDisplay"]
+margin_left = 2.0
+margin_top = 27.0
+margin_right = 42.0
+margin_bottom = 47.0
+text = "0/0"

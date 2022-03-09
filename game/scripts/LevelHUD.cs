@@ -49,7 +49,6 @@ public class LevelHUD : CanvasLayer
 
     private void CreateDirectionButton(int x, int y, string text, Control.LayoutPreset layoutPreset)
     {
-        Events events = (Events) GetNode("/roots/events");
         DirectionButton inst = (DirectionButton) button.Instance();
         AddChild(inst);
         inst.XOffset = x;

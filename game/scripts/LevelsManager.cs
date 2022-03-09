@@ -26,7 +26,6 @@ public class LevelsManager : Node
         get => _currLevel;
         set
         {
-            GD.Print("changing level");
             _currLevel = value;
             GetTree().ChangeSceneTo(_currLevel.LevelScene);
         }
@@ -157,6 +156,7 @@ public class LevelsManager : Node
 
     public void LoadLevel(int x, int y)
     {
+        Events events = (Events) GetNode("/root/events");
         Y = y;
         X = x;
     }

@@ -63,6 +63,8 @@ public class Player : KinematicBody2D
         GetNode<AnimatedSprite>("AnimatedSprite").Frames = character.Frames;
     }
 
+    
+
     public void OnCharacterChange(BaseCharacter character)
     {
         UpdateCharacterStyle(character);
