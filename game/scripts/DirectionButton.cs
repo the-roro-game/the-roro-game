@@ -3,6 +3,6 @@ using System;
 
 public class DirectionButton : Button
 {
-    public int XOffset = 0;
-    public int YOffset = 0;
+	public int XOffset = 0;
+	public int YOffset = 0;
 }
