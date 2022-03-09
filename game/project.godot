@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="the roro game"
-run/main_scene="res://scenes/SelectionScreen.tscn"
+run/main_scene="res://scenes/BossPat/Boss.tscn"
 
 [autoload]
 
