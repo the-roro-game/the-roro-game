@@ -8,6 +8,7 @@ namespace therorogame.scripts
         [Signal]
         public delegate void CharacterChange(BaseCharacter newCharacter);
 
-       
+        [Signal]
+        public delegate void DirectionChange(int x, int y);
     }
 }

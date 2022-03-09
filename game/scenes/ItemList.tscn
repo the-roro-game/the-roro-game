@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/CharactersList.cs" type="Script" id=1]
+
+[node name="ItemList" type="ItemList"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+CharactersPath = "res://data/persos"
+
+[node name="ErrorMessage" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -10.0
+margin_right = 20.0
+margin_bottom = 10.0
+
+[node name="ValidateButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -100.0
+margin_right = 6.0
+margin_bottom = -100.0
+text = "Validate"

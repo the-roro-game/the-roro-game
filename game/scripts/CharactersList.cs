@@ -28,6 +28,9 @@ public class CharactersList : ItemList
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Connect("item_selected", this, nameof(OnCharacterItemSelected));
+        GetNode<Button>("ValidateButton").Connect("pressed", this, nameof(OnValidateItem));
+
         GenerateList();
         RefreshListUi();
     }

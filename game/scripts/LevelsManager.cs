@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using therorogame.data;
+using therorogame.scripts;
 using Path = System.IO.Path;
 
 public class PossibleDirections
@@ -31,6 +32,30 @@ public class LevelsManager : Node
         }
     }
 
+    private int _X;
+
+    public int X
+    {
+        get => _X;
+        set
+        {
+            _X = value;
+            CurrLevel = Map[Y, X];
+        }
+    }
+
+    private int _Y;
+
+    public int Y
+    {
+        get => _Y;
+        set
+        {
+            _Y = value;
+            CurrLevel = Map[Y, X];
+        }
+    }
+
     private const int WIDTH = 4;
     private const int HEIGHT = 2;
     public BaseLevel[,] Map = new BaseLevel[HEIGHT, WIDTH];
@@ -41,6 +66,7 @@ public class LevelsManager : Node
 
     public override void _Ready()
     {
+        Events events = (Events) GetNode("/root/events");
         UpdateLevelMap();
         ShowMap((x, y) => $"{Map[y, x].ToString()}\t");
         ShowMap((x, y) =>
@@ -130,6 +156,12 @@ public class LevelsManager : Node
 
     public void LoadLevel(int x, int y)
     {
-        CurrLevel = Map[y, x];
+        Y = y;
+        X = x;
+    }
+
+    public void OnDirectionChange(int x, int y)
+    {
+        LoadLevel(X + x, Y + y);
     }
 }

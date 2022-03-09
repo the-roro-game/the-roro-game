@@ -3,7 +3,4 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>therorogame</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="scripts\levels" />
-  </ItemGroup>
 </Project>
