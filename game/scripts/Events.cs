@@ -14,5 +14,14 @@ namespace therorogame.scripts
 
         [Signal]
         public delegate void PlayerLifeChange(int NewLife, int MaxLife);
+
+        [Signal]
+        public delegate void TriggerInteract(string text);
+
+        [Signal]
+        public delegate void ExitInteract();
+
+        [Signal]
+        public delegate void Interact();
     }
 }

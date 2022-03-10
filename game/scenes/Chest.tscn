@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Chest.cs" type="Script" id=1]
+[ext_resource path="res://scenes/InteractableTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://arts/decor/coffre.png" type="Texture" id=3]
+[ext_resource path="res://arts/decor/coffre_ouvert.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "closed",
+"speed": 5.0
+} ]
 
 [node name="Chest" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Interactable" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 4.16355, 4.36279 )
+InteractName = "chest"
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "closed"
