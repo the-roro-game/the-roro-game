@@ -17,6 +17,7 @@ public class Boss : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print("boss");
 		shoot_timer = GetNode<Timer>("ShootTimer");
 		rotater = GetNode<Node2D>("Rotater");
 
@@ -41,7 +42,7 @@ public class Boss : Node2D
 	public override void _Process(float delta)
 	{
 		rotater = GetNode<Node2D>("Rotater");
-		circlePattern(rotater,delta);
+		circlePattern(rotater, delta);
 	}
 
 	private void _on_ShootTimer_timeout()
@@ -52,14 +53,14 @@ public class Boss : Node2D
 		{
 			Node2D bullet = Bullet_scene.Instance<Node2D>();
 			AddChild(bullet);
-			bullet.Position = child.GlobalPosition;
+			bullet.Position = child.Position;
 			bullet.Rotation = child.GlobalRotation;
 		}
 	}
 
-	private void circlePattern(Node2D rotater,float delta)
+	private void circlePattern(Node2D rotater, float delta)
 	{
 		float new_rotation = rotater.RotationDegrees + Rotate_speed * delta;
-		rotater.RotationDegrees = new_rotation %360;
+		rotater.RotationDegrees = new_rotation % 360;
 	}
 }
