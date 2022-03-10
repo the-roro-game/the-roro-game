@@ -30,21 +30,21 @@
 [ext_resource path="res://animations/PHPlephant/pixil-frame-0(8).png" type="Texture" id=28]
 [ext_resource path="res://animations/PHPlephant/pixil-frame-0(5).png" type="Texture" id=29]
 [ext_resource path="res://animations/Eau/pixil-frame-0(18).png" type="Texture" id=30]
-[ext_resource path="res://animations/Snake/Snake 2.png" type="Texture" id=31]
+[ext_resource path="res://animations/Blue Snake/Snake 2.png" type="Texture" id=31]
 [ext_resource path="res://animations/Portail/Portail-2.png" type="Texture" id=32]
 [ext_resource path="res://animations/Eau/pixil-frame-0(17).png" type="Texture" id=33]
 [ext_resource path="res://animations/Eau/pixil-frame-0(15).png" type="Texture" id=34]
 [ext_resource path="res://animations/Eau/pixil-frame-0(13).png" type="Texture" id=35]
 [ext_resource path="res://animations/Eau/pixil-frame-0(12).png" type="Texture" id=36]
-[ext_resource path="res://animations/Snake/Snake 3.png" type="Texture" id=37]
-[ext_resource path="res://animations/Snake/Snake 0.png" type="Texture" id=38]
-[ext_resource path="res://animations/Snake/Snake 1.png" type="Texture" id=39]
+[ext_resource path="res://animations/Blue Snake/Snake 3.png" type="Texture" id=37]
+[ext_resource path="res://animations/Blue Snake/Snake 0.png" type="Texture" id=38]
+[ext_resource path="res://animations/Blue Snake/Snake 1.png" type="Texture" id=39]
 [ext_resource path="res://animations/Portail/Portail-1.png" type="Texture" id=40]
 [ext_resource path="res://animations/Eau/pixil-frame-0(14).png" type="Texture" id=41]
 [ext_resource path="res://animations/Eau/pixil-frame-0(19).png" type="Texture" id=42]
 [ext_resource path="res://animations/Eau/pixil-frame-0(11).png" type="Texture" id=43]
-[ext_resource path="res://animations/Crabe/pixil-frame-0(2).png" type="Texture" id=44]
-[ext_resource path="res://animations/Crabe/pixil-frame-0(1).png" type="Texture" id=45]
+[ext_resource path="res://animations/Crabe/Crabe 1.png" type="Texture" id=44]
+[ext_resource path="res://animations/Crabe/Crabe 2.png" type="Texture" id=45]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -105,11 +105,10 @@ margin_bottom = 9.0
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-position = Vector2( -1586, -191 )
+position = Vector2( -1831, -429 )
 scale = Vector2( 12.77, 14.22 )
 frames = SubResource( 1 )
 animation = "Crabe"
-frame = 1
 playing = true
 centered = false
 
