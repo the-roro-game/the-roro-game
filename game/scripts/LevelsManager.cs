@@ -29,9 +29,10 @@ public class LevelsManager : Node
             var last = _currLevel;
 
             _currLevel = value;
-            GetTree().ChangeSceneTo(_currLevel.SavedScene != null ? _currLevel.SavedScene : _currLevel.LevelScene);
+            GetTree().ChangeSceneTo(_currLevel.SavedScene ?? _currLevel.LevelScene);
             if (last != null)
             {
+                GD.Print(last.LevelName);
                 var saved = new PackedScene();
 
                 saved.Pack(GetTree().CurrentScene);

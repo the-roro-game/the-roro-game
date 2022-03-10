@@ -19,7 +19,6 @@ public class NotificationsList : Control
         item.Icon = notification.texture;
         item.Description = notification.text;
         item.Timeout = notification.timeout;
-        GD.Print("lol");
         GetNode<VBoxContainer>("list").AddChild(item);
     }
 }

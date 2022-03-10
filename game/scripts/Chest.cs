@@ -5,6 +5,7 @@ using therorogame.scripts;
 public class Chest : Node2D
 {
     [Export] public BaseItem item = null;
+    [Export] public int Quantity;
     private bool opened = false;
 
 
@@ -20,7 +21,6 @@ public class Chest : Node2D
 
         if (Input.IsActionJustPressed("ui_interact") && trigger.IsTrigger && !opened)
         {
-           
             opened = true;
 
             Events events = (Events) GetNode<Events>("/root/events");

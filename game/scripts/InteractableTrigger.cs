@@ -34,7 +34,7 @@ public class InteractableTrigger : Node2D
     {
         Events events = (Events) GetNode("/root/events");
         events.EmitSignal(nameof(Events.ExitInteract));
-        IsTrigger = true;
+        IsTrigger = false;
     }
 
     public void DisableCollision()
