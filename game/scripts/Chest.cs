@@ -5,54 +5,30 @@ using therorogame.scripts;
 public class Chest : Node2D
 {
     [Export] public BaseItem item = null;
-    
+    private bool opened = false;
+
 
     public override void _Ready()
     {
-        base._Ready();
+        ItemsManager im = (ItemsManager) GetNode("/root/im");
+        item = im.GetRandomItem();
     }
 
     public override void _Process(float delta)
     {
         InteractableTrigger trigger = GetNode<InteractableTrigger>("Interactable");
-        if (trigger != null)
+
+        if (Input.IsActionJustPressed("ui_interact") && trigger.IsTrigger && !opened)
         {
-            if (Input.IsActionPressed("ui_interact") && trigger.IsTrigger)
-            {
-                GetNode<AnimatedSprite>("sprite").Animation = "open";
-                trigger.DisableCollision();
-            }
-        }
-    }
+           
+            opened = true;
 
+            Events events = (Events) GetNode<Events>("/root/events");
+            GetNode<AnimatedSprite>("sprite").Animation = "open";
+            trigger.DisableCollision();
+            Notification notification = new Notification(item.Icon, $"give {item.Name}", 2);
 
-    public BaseItem GetRandomItem()
-    {
-        var dir = new Directory();
-        if (dir.Open(RootLevelPath) == Error.Ok)
-        {
-            dir.ListDirBegin(true, true);
-            var filename = dir.GetNext();
-            while (filename != "")
-            {
-                GD.Print(filename);
-                int RoomNb = Path.GetFileNameWithoutExtension(filename).ToInt();
-                if (IsValidRoom(RoomNb))
-                {
-                    int x = RoomNb % WIDTH;
-                    int y = RoomNb / WIDTH;
-                    BaseLevel level = ResourceLoader.Load<BaseLevel>(RootLevelPath + "/" + filename);
-                    Map[y, x] = level;
-                }
-
-                filename = dir.GetNext();
-            }
-
-            dir.ListDirEnd();
-        }
-        else
-        {
-            GD.PrintErr("can't load map");
+            events.EmitSignal(nameof(Events.EmitNotification), notification);
         }
     }
 }

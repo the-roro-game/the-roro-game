@@ -7,16 +7,13 @@ public class DirectionButton : Node2D
     public int XOffset = 0;
     public int YOffset = 0;
 
-    public override void _Ready()
-    {
-        GetNode<Area2D>("TriggerZone").Connect("body_entered", this, nameof(OnTriggerDirection));
-    }
 
-    public void OnTriggerDirection(Node node)
+    public override void _Process(float delta)
     {
-        if (node.Name == "Player")
+        InteractableTrigger trigger = GetNode<InteractableTrigger>("Interactable");
+        if (Input.IsActionJustPressed("ui_interact") && trigger.IsTrigger)
         {
-            Events events = (Events)GetNode("/root/events");
+            Events events = (Events) GetNode("/root/events");
             events.EmitSignal(nameof(Events.DirectionChange), XOffset, YOffset);
         }
     }

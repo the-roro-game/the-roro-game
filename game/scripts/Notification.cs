@@ -2,7 +2,7 @@ using Godot;
 
 namespace therorogame.scripts
 {
-    public class Notification
+    public class Notification : Object
     {
         public Texture texture;
         public string text;

@@ -49,6 +49,17 @@ public class NotificationItem : HBoxContainer
 
     public void OnTimeout()
     {
+        Tween tween = new Tween();
+        tween.InterpolateProperty(this, "modulate:a", Modulate.a, 0, 1);
+        tween.InterpolateProperty(this, "rect_position:x", RectPosition.x, RectPosition.x - 100, 1,
+            Tween.TransitionType.Back);
+        tween.Connect("tween_completed", this, nameof(OnTweenFinished));
+        AddChild(tween);
+        tween.Start();
+    }
+
+    public void OnTweenFinished()
+    {
         QueueFree();
     }
 }

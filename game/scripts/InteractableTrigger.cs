@@ -4,7 +4,9 @@ using therorogame.scripts;
 
 public class InteractableTrigger : Node2D
 {
-    [Export] public string InteractName;
+    [Export] public string InteractName = "";
+
+    [Export] public string GroupTrigger = "";
 
     public bool IsTrigger = false;
 
@@ -20,9 +22,12 @@ public class InteractableTrigger : Node2D
 
     public void TriggerEnter(Node body)
     {
-        Events events = (Events) GetNode("/root/events");
-        events.EmitSignal(nameof(Events.TriggerInteract), InteractName);
-        IsTrigger = true;
+        if (GroupTrigger == "" || body.IsInGroup(GroupTrigger))
+        {
+            Events events = (Events) GetNode("/root/events");
+            events.EmitSignal(nameof(Events.TriggerInteract), InteractName);
+            IsTrigger = true;
+        }
     }
 
     public void TriggerExit(Node body)
