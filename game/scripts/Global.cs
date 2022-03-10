@@ -30,9 +30,10 @@ public class Global : Node
 
         }
     }
+    public static string ItemPath = "res://d"
 
 
-    public override void _Ready()
+        public override void _Ready()
     {
         Events events = (Events)GetNode("/root/events");
         events.Connect(nameof(Events.CharacterChange), this, nameof(UpdateCurrentCharacter));

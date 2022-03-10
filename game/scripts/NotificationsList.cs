@@ -1,19 +1,19 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using therorogame.scripts;
 
 public class NotificationsList : Control
 {
-    public Queue<NotificationItem> NotificationQueue = new Queue<NotificationItem>();
     [Export] private PackedScene ItemScene;
 
-    public override void _Ready()
-    {
-    }
 
-    public void AddNotification(Texture texture, string text, int timeout)
+    public void AddNotification(Notification notification)
     {
         NotificationItem item = ItemScene.Instance<NotificationItem>();
-        // item.
+        item.Icon = notification.texture;
+        item.Description = notification.text;
+        item.Timeout = notification.timeout;
+        AddChild(item);
     }
 }

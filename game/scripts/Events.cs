@@ -22,6 +22,6 @@ namespace therorogame.scripts
         public delegate void ExitInteract();
 
         [Signal]
-        public delegate void Interact();
+        public delegate void EmitNotification(Notification notification);
     }
 }
