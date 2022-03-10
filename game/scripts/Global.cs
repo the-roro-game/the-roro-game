@@ -25,22 +25,22 @@ public class Global : Node
         get => _currCoins;
         set
         {
-            GD.Print("new coins",value);
+            GD.Print("new coins", value);
             _currCoins = value;
-            
+
         }
     }
 
 
     public override void _Ready()
     {
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events)GetNode("/root/events");
         events.Connect(nameof(Events.CharacterChange), this, nameof(UpdateCurrentCharacter));
     }
 
     public void UpdateLife(int NewLife, int MaxLife)
     {
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events)GetNode("/root/events");
         CurrCharacter.Health = Math.Min(NewLife, CurrCharacter.MaxHealth);
         events.EmitSignal(nameof(Events.PlayerLifeChange), CurrCharacter.Health, CurrCharacter.MaxHealth);
     }

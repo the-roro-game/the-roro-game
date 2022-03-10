@@ -3,8 +3,37 @@
 [ext_resource path="res://scripts/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/LevelHUD.tscn" type="PackedScene" id=3]
+<<<<<<< HEAD
 [ext_resource path="res://scenes/DirectionButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/DirectionGenerator.cs" type="Script" id=5]
+=======
+[ext_resource path="res://arts/tilesets/forest_set/Texture/tileset_grass1.png" type="Texture" id=4]
+
+[sub_resource type="TileSet" id=1]
+0/name = "tileset_grass1.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [  ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+>>>>>>> matheo
 
 [node name="EmptyLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,11 +42,19 @@ CharacterScene = ExtResource( 2 )
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 916, 486 )
 
+[node name="LevelHUD$" parent="." instance=ExtResource( 3 )]
+
 [node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
 format = 1
+<<<<<<< HEAD
 
 [node name="LevelHUD" parent="." instance=ExtResource( 3 )]
 
 [node name="DirectionGenerator" type="Node" parent="."]
 script = ExtResource( 5 )
 DirectionScene = ExtResource( 4 )
+=======
+tile_data = PoolIntArray( 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0 )
+>>>>>>> matheo

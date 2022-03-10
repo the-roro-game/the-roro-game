@@ -6,6 +6,7 @@ public class DirectionButton : Node2D
 {
 	public int XOffset = 0;
 	public int YOffset = 0;
+<<<<<<< HEAD
 
 	public override void _Ready()
 	{
@@ -20,4 +21,6 @@ public class DirectionButton : Node2D
 			events.EmitSignal(nameof(Events.DirectionChange), XOffset, YOffset);
 		}
 	}
+=======
+>>>>>>> matheo
 }
