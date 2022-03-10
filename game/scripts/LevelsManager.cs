@@ -26,8 +26,17 @@ public class LevelsManager : Node
         get => _currLevel;
         set
         {
+            var last = _currLevel;
+
             _currLevel = value;
-            GetTree().ChangeSceneTo(_currLevel.LevelScene);
+            GetTree().ChangeSceneTo(_currLevel.SavedScene != null ? _currLevel.SavedScene : _currLevel.LevelScene);
+            if (last != null)
+            {
+                var saved = new PackedScene();
+
+                saved.Pack(GetTree().CurrentScene);
+                last.SavedScene = saved;
+            }
         }
     }
 

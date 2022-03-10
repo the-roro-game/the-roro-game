@@ -18,6 +18,19 @@ public class Global : Node
         }
     }
 
+    private int _currCoins;
+
+    public int CurrCoins
+    {
+        get => _currCoins;
+        set
+        {
+            GD.Print("new coins",value);
+            _currCoins = value;
+            
+        }
+    }
+
 
     public override void _Ready()
     {
@@ -30,6 +43,12 @@ public class Global : Node
         Events events = (Events) GetNode("/root/events");
         CurrCharacter.Health = Math.Min(NewLife, CurrCharacter.MaxHealth);
         events.EmitSignal(nameof(Events.PlayerLifeChange), CurrCharacter.Health, CurrCharacter.MaxHealth);
+    }
+    public void UpdateCoins(int NewCoins)
+    {
+        // Events events = (Events) GetNode("/root/events");
+        // CurrCharacter.Health = Math.Min(NewLife, CurrCharacter.MaxHealth);
+        // events.EmitSignal(nameof(Events.PlayerLifeChange), CurrCharacter.Health, CurrCharacter.MaxHealth);
     }
 
 

@@ -26,13 +26,15 @@ public class DirectionGenerator : Node
         PossibleDirections possibleDirections = lm.GetPossibleDirections(lm.X, lm.Y);
 
 
-        CreateDirectionTrigger(0, -1, "up", possibleDirections.Up, new Vector2(screenSize.x / 2, 0));
-        CreateDirectionTrigger(1, 0, "right", possibleDirections.Right, new Vector2(screenSize.x, screenSize.y / 2));
-        CreateDirectionTrigger(0, 1, "down", possibleDirections.Down, new Vector2(screenSize.x / 2, screenSize.y));
-        CreateDirectionTrigger(-1, 0, "left", possibleDirections.Left, new Vector2(0,screenSize.y/2));
+        CreateDirectionTrigger(0, -1, "up", possibleDirections.Up, new Vector2(screenSize.x / 2, 64), Colors.Aquamarine);
+        CreateDirectionTrigger(1, 0, "right", possibleDirections.Right,
+            new Vector2(screenSize.x - 64, screenSize.y / 2), Colors.Purple);
+        CreateDirectionTrigger(0, 1, "down", possibleDirections.Down, new Vector2(screenSize.x / 2, screenSize.y - 64),
+            Colors.Yellow);
+        CreateDirectionTrigger(-1, 0, "left", possibleDirections.Left, new Vector2(64, screenSize.y / 2), Colors.Green);
     }
 
-    public void CreateDirectionTrigger(int x, int y, string nodeName, bool visibility, Vector2 position)
+    public void CreateDirectionTrigger(int x, int y, string nodeName, bool visibility, Vector2 position, Color color)
     {
         if (visibility)
         {
@@ -41,6 +43,9 @@ public class DirectionGenerator : Node
             direction.XOffset = x;
             direction.YOffset = y;
             direction.Name = nodeName;
+            AnimatedSprite sprite = direction.GetNode<AnimatedSprite>("AnimatedSprite");
+            sprite.SelfModulate = color;
+            // direction.RotationDegrees = rotation;
             AddChild(direction);
         }
     }
