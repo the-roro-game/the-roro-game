@@ -10,8 +10,8 @@ public class Player : KinematicBody2D
 
     public override void _Ready()
     {
-        Events events = (Events) GetNode("/root/events");
-        Global global = (Global) GetNode("/root/Global");
+        Events events = (Events)GetNode("/root/events");
+        Global global = (Global)GetNode("/root/Global");
         events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
         UpdateCharacterStyle(global.CurrCharacter);
     }
@@ -63,7 +63,7 @@ public class Player : KinematicBody2D
         GetNode<AnimatedSprite>("AnimatedSprite").Frames = character.Frames;
     }
 
-    
+
 
     public void OnCharacterChange(BaseCharacter character)
     {

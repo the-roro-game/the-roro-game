@@ -16,7 +16,7 @@ public class DirectionButton : Node2D
     {
         if (node.Name == "Player")
         {
-            Events events = (Events) GetNode("/root/events");
+            Events events = (Events)GetNode("/root/events");
             events.EmitSignal(nameof(Events.DirectionChange), XOffset, YOffset);
         }
     }
