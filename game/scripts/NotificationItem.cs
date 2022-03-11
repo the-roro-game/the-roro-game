@@ -50,6 +50,7 @@ public class NotificationItem : HBoxContainer
     public void OnTimeout()
     {
         Tween tween = new Tween();
+        tween.Name = "Tween";
         tween.InterpolateProperty(this, "modulate:a", Modulate.a, 0, 1);
         tween.InterpolateProperty(this, "rect_position:x", RectPosition.x, RectPosition.x - 100, 1,
             Tween.TransitionType.Back);
@@ -60,6 +61,9 @@ public class NotificationItem : HBoxContainer
 
     public void OnTweenFinished()
     {
+        Tween tween = GetNode<Tween>("Tween");
+        RemoveChild(tween);
+        tween.QueueFree();
         QueueFree();
     }
 }
