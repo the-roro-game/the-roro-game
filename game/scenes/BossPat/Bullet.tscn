@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Bullet.cs" type="Script" id=1]
 [ext_resource path="res://arts/bullet.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TriggerDamage.tscn" type="PackedScene" id=3]
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,5 +14,9 @@ texture = ExtResource( 2 )
 
 [node name="KillTimer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+scale = Vector2( 0.2, 0.159999 )
+Damage = 2
 
 [connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]

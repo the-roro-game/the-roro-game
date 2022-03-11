@@ -59,7 +59,7 @@ public class NotificationItem : HBoxContainer
         tween.Start();
     }
 
-    public void OnTweenFinished()
+    public void OnTweenFinished(Godot.Object obj, NodePath key)
     {
         Tween tween = GetNode<Tween>("Tween");
         RemoveChild(tween);

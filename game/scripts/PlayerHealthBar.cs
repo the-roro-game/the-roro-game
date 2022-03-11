@@ -25,7 +25,10 @@ public class PlayerHealthBar : Control
     private void UpdateBar(int NewLife, int MaxLife)
     {
         var HealthBar = GetNode<TextureProgress>("HealthBar");
-        HealthBar.Value = NewLife;
+        Tween tween = new Tween();
+        AddChild(tween);
+        tween.InterpolateProperty(HealthBar, "value", HealthBar.Value, NewLife, 1f, Tween.TransitionType.Back);
+        tween.Start();
         HealthBar.MaxValue = MaxLife;
         HealthBar.TextureProgress_ = GreenBar;
         if (NewLife < MaxLife * 0.7)
@@ -37,6 +40,9 @@ public class PlayerHealthBar : Control
         {
             HealthBar.TextureProgress_ = RedBar;
         }
+
+        // RemoveChild(tween);
+        // tween.QueueFree();
     }
 
     private void UpdateValues(int NewLife, int MaxLife)

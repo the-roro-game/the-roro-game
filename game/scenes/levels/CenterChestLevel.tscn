@@ -4,26 +4,34 @@
 [ext_resource path="res://scenes/Chest.tscn" type="PackedScene" id=2]
 
 [node name="CenterChestLevel" instance=ExtResource( 1 )]
-scale = Vector2( 0.748519, 0.660849 )
 
 [node name="StartPosition" parent="." index="0"]
 position = Vector2( 785.551, 550.807 )
 
 [node name="Chest" parent="." index="4" instance=ExtResource( 2 )]
-position = Vector2( 633.25, 402.513 )
+position = Vector2( 600, 199 )
 
 [node name="Chest2" parent="." index="5" instance=ExtResource( 2 )]
-position = Vector2( 1206.38, 553.833 )
+position = Vector2( 1057, 347 )
 
 [node name="Chest3" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( 3150.22, 1398.2 )
 scale = Vector2( 4, 4 )
 
 [node name="Chest4" parent="." index="7" instance=ExtResource( 2 )]
-position = Vector2( 876.397, 285.996 )
+position = Vector2( 819, 121 )
 
 [node name="Chest5" parent="." index="8" instance=ExtResource( 2 )]
-position = Vector2( 1281.2, 313.234 )
+position = Vector2( 1195, 154 )
 
 [node name="Chest6" parent="." index="9" instance=ExtResource( 2 )]
-position = Vector2( 1095.5, 829.236 )
+position = Vector2( 1038, 645 )
+
+[node name="Chest7" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 916, 176 )
+
+[node name="Chest8" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 762, 295 )
+
+[node name="Chest9" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 874, 288 )

@@ -15,6 +15,7 @@ public class Player : KinematicBody2D
         Global global = (Global) GetNode("/root/Global");
         events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
         events.Connect(nameof(Events.PlayerStartTp), this, nameof(OnCharacterTp));
+        events.Connect(nameof(Events.TakeDamage), this, nameof(OnCharacterTakeDamage));
         UpdateCharacterStyle(global.CurrCharacter);
     }
 
@@ -37,5 +38,10 @@ public class Player : KinematicBody2D
         values.Add("X", x.ToString());
         values.Add("Y", y.ToString());
         GetNode<StateMachine>("StateMachine").TransitionTo("PlayerTp", values);
+    }
+
+    public void OnCharacterTakeDamage(int damage)
+    {
+        GetNode<StateMachine>("StateMachine").TransitionTo("PlayerHurt");
     }
 }

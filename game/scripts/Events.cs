@@ -26,5 +26,8 @@ namespace therorogame.scripts
 
         [Signal]
         public delegate void EmitNotification(Notification notification);
+
+        [Signal]
+        public delegate void TakeDamage(int damage);
     }
 }
