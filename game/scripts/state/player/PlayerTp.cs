@@ -37,22 +37,25 @@ public class PlayerTp : State
     {
         Player player = GetOwner<Player>();
         Tween tween = new Tween();
+        tween.Name = "Tween";
         tween.InterpolateProperty(player, "rotation_degrees", player.RotationDegrees, -360, duration,
             Tween.TransitionType.Back);
         tween.InterpolateProperty(player, "scale", player.Scale, new Vector2(0, 0), duration);
         tween.Connect("tween_completed", this, nameof(OnTpCompleted));
 
-        player.AddChild(tween);
+        AddChild(tween);
 
         tween.Start();
     }
 
     public void OnTpCompleted(Godot.Object obj, NodePath key)
     {
+        Tween tween = GetNode<Tween>("Tween");
+        tween.StopAll();
         GD.Print("lolll");
         Events events = (Events) GetNode("/root/events");
         StateMachine.TransitionTo("PlayerIdle");
-        
+
         events.EmitSignal(nameof(Events.DirectionChange), X, Y);
     }
 }
