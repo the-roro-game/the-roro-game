@@ -13,8 +13,10 @@ public class DirectionButton : Node2D
         InteractableTrigger trigger = GetNode<InteractableTrigger>("Interactable");
         if (Input.IsActionJustPressed("ui_interact") && trigger.IsTrigger)
         {
+            trigger.DisableCollision();
+            trigger.IsTrigger = false;
             Events events = (Events) GetNode("/root/events");
-            events.EmitSignal(nameof(Events.DirectionChange), XOffset, YOffset);
+            events.EmitSignal(nameof(Events.PlayerStartTp), XOffset, YOffset);
         }
     }
 }

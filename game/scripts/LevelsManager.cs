@@ -41,29 +41,12 @@ public class LevelsManager : Node
         }
     }
 
-    private int _X;
 
-    public int X
-    {
-        get => _X;
-        set
-        {
-            _X = value;
-            CurrLevel = Map[Y, X];
-        }
-    }
+    public int X;
 
-    private int _Y;
 
-    public int Y
-    {
-        get => _Y;
-        set
-        {
-            _Y = value;
-            CurrLevel = Map[Y, X];
-        }
-    }
+    public int Y;
+
 
     private const int WIDTH = 4;
     private const int HEIGHT = 2;
@@ -166,9 +149,9 @@ public class LevelsManager : Node
 
     public void LoadLevel(int x, int y)
     {
-        Events events = (Events) GetNode("/root/events");
         Y = y;
         X = x;
+        CurrLevel = Map[Y, X];
     }
 
     public void OnDirectionChange(int x, int y)
