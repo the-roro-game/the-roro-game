@@ -24,7 +24,7 @@ public class InteractableTrigger : Node2D
     {
         if (GroupTrigger == "" || body.IsInGroup(GroupTrigger))
         {
-            Events events = (Events) GetNode("/root/events");
+            Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
             events.EmitSignal(nameof(Events.TriggerInteract), InteractName);
             IsTrigger = true;
         }
@@ -32,7 +32,7 @@ public class InteractableTrigger : Node2D
 
     public void TriggerExit(Node body)
     {
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         events.EmitSignal(nameof(Events.ExitInteract));
         IsTrigger = false;
     }

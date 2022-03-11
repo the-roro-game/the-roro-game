@@ -19,6 +19,7 @@ Global="*res://scripts/Global.cs"
 events="*res://scripts/Events.cs"
 lm="*res://scripts/LevelsManager.cs"
 im="*res://scripts/ItemsManager.cs"
+stats="*res://scenes/Stats.tscn"
 
 [display]
 

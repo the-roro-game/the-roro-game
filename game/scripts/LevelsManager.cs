@@ -58,7 +58,7 @@ public class LevelsManager : Node
 
     public override void _Ready()
     {
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         UpdateLevelMap();
         ShowMap((x, y) => $"{Map[y, x].ToString()}\t");
         ShowMap((x, y) =>

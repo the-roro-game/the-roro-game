@@ -15,7 +15,7 @@ public class DirectionButton : Node2D
         {
             trigger.DisableCollision();
             trigger.IsTrigger = false;
-            Events events = (Events) GetNode("/root/events");
+            Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
             events.EmitSignal(nameof(Events.PlayerStartTp), XOffset, YOffset);
         }
     }

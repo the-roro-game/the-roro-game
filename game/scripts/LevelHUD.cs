@@ -8,10 +8,10 @@ public class LevelHUD : CanvasLayer
 
     public override void _Ready()
     {
-        LevelsManager lm = (LevelsManager) GetNode("/root/lm");
+        LevelsManager lm = (LevelsManager) GetNode(AutoloadPath.LEVELS_MANAGER);
         GetNode<Label>("HBoxContainer/CurrPos").Text = $"{lm.Y},{lm.X}";
 
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         events.Connect(nameof(Events.TriggerInteract), this, nameof(EnableInteractText));
         events.Connect(nameof(Events.ExitInteract), this, nameof(DisableInteractText));
     }

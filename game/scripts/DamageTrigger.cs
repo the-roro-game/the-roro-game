@@ -16,7 +16,7 @@ public class DamageTrigger : Area2D
         if (body.IsInGroup("interactor"))
         {
             GD.Print("lol");
-            Events events = (Events) GetNode<Events>("/root/events");
+            Events events = (Events) GetNode<Events>(AutoloadPath.EVENTS_PATH);
             events.EmitSignal(nameof(Events.TakeDamage), Damage);
         }
     }

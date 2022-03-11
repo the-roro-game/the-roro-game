@@ -11,7 +11,7 @@ public class Chest : Node2D
 
     public override void _Ready()
     {
-        ItemsManager im = (ItemsManager) GetNode("/root/im");
+        ItemsManager im = (ItemsManager) GetNode(AutoloadPath.ITEMS_MANAGER);
         item = im.GetRandomItem();
     }
 
@@ -23,7 +23,7 @@ public class Chest : Node2D
         {
             opened = true;
 
-            Events events = (Events) GetNode<Events>("/root/events");
+            Events events = (Events) GetNode<Events>(AutoloadPath.EVENTS_PATH);
             GetNode<AnimatedSprite>("sprite").Animation = "open";
             trigger.DisableCollision();
             Notification notification = new Notification(item.Icon, $"give {item.Name}", 2);

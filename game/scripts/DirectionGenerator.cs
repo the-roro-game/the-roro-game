@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using therorogame.scripts;
 
 public class DirectionGenerator : Node
 {
@@ -16,7 +17,7 @@ public class DirectionGenerator : Node
 
     public void UpdateDirections()
     {
-        LevelsManager lm = (LevelsManager) GetNode("/root/lm");
+        LevelsManager lm = (LevelsManager) GetNode(AutoloadPath.LEVELS_MANAGER);
         foreach (Node2D child in GetChildren())
         {
             RemoveChild(child);

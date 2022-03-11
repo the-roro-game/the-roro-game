@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 Name = "matheo"
+MaxHealth = 100
 Health = 100
 Frames = ExtResource( 2 )
 DefaultAnim = "idle"

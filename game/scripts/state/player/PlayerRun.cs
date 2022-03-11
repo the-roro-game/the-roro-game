@@ -30,7 +30,7 @@ public class PlayerRun : State
         }
         else if (inputVector.y != 0)
         {
-            animatedSprite.Animation = inputVector.y > 0 ? "idle" : "top";
+            animatedSprite.Animation = inputVector.y > 0 ? "idle" : "up";
             animatedSprite.FlipH = false;
         }
 

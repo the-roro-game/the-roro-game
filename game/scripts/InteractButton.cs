@@ -11,7 +11,7 @@ public class InteractButton : TouchScreenButton
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         events.Connect(nameof(Events.TriggerInteract), this, nameof(EnableButton));
         events.Connect(nameof(Events.ExitInteract), this, nameof(DisableButton));
     }

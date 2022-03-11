@@ -11,8 +11,8 @@ public class Player : KinematicBody2D
 
     public override void _Ready()
     {
-        Events events = (Events) GetNode("/root/events");
-        Global global = (Global) GetNode("/root/Global");
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
+        Global global = (Global) GetNode(AutoloadPath.GLOBAL_PATH);
         events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
         events.Connect(nameof(Events.PlayerStartTp), this, nameof(OnCharacterTp));
         events.Connect(nameof(Events.TakeDamage), this, nameof(OnCharacterTakeDamage));

@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using therorogame.scripts;
+using therorogame.scripts.stats;
 
 public class PlayerHealthBar : Control
 {
@@ -8,12 +9,21 @@ public class PlayerHealthBar : Control
     public Texture YellowBar = ResourceLoader.Load<Texture>("res://arts/gui/yellowbar.png");
     public Texture RedBar = ResourceLoader.Load<Texture>("res://arts/gui/redbar.png");
 
-    public override void _EnterTree()
+    public override void _Ready()
     {
-        Events events = (Events) GetNode("/root/events");
-        Global global = (Global) GetNode("/root/Global");
-        events.Connect(nameof(Events.PlayerLifeChange), this, nameof(OnPlayerLifeChange));
-        OnPlayerLifeChange(global.CurrCharacter.Health, global.CurrCharacter.MaxHealth);
+        StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
+        LifeStat lifeStat = statsManager.GetStat<LifeStat>("LifeStat");
+        if (lifeStat != default)
+        {
+            lifeStat.Connect(nameof(LifeStat.UpdateLife), this, nameof(OnPlayerLifeChange));
+            OnPlayerLifeChange(lifeStat.StatValue, lifeStat.MaxLife);
+
+        }
+        else
+        {
+            Visible = false;
+        }
+
     }
 
     public void OnPlayerLifeChange(int NewLife, int MaxLife)
@@ -21,6 +31,7 @@ public class PlayerHealthBar : Control
         UpdateBar(NewLife, MaxLife);
         UpdateValues(NewLife, MaxLife);
     }
+
 
     private void UpdateBar(int NewLife, int MaxLife)
     {

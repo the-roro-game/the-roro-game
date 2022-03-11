@@ -53,7 +53,7 @@ public class PlayerTp : State
         Tween tween = GetNode<Tween>("Tween");
         tween.StopAll();
         GD.Print("lolll");
-        Events events = (Events) GetNode("/root/events");
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         StateMachine.TransitionTo("PlayerIdle");
 
         events.EmitSignal(nameof(Events.DirectionChange), X, Y);
