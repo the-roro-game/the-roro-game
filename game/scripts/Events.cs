@@ -11,6 +11,9 @@ namespace therorogame.scripts
         [Signal]
         public delegate void DirectionChange(int x, int y);
 
+        [Signal]
+        public delegate void PlayerStartTp(int x, int y);
+
 
         [Signal]
         public delegate void PlayerLifeChange(int NewLife, int MaxLife);
@@ -22,6 +25,6 @@ namespace therorogame.scripts
         public delegate void ExitInteract();
 
         [Signal]
-        public delegate void Interact();
+        public delegate void EmitNotification(Notification notification);
     }
 }
