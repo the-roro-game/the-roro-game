@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/levels/EmptyLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Chest.tscn" type="PackedScene" id=2]
 
 [node name="CenterChestLevel" instance=ExtResource( 1 )]
 scale = Vector2( 0.748519, 0.660849 )
+
+[node name="StartPosition" parent="." index="0"]
+position = Vector2( 785.551, 550.807 )
+
+[node name="Chest" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 633.25, 402.513 )
+
+[node name="Chest2" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 1206.38, 553.833 )
+
+[node name="Chest3" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 3150.22, 1398.2 )
+scale = Vector2( 4, 4 )
+
+[node name="Chest4" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 876.397, 285.996 )
+
+[node name="Chest5" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 1281.2, 313.234 )
+
+[node name="Chest6" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 1095.5, 829.236 )
