@@ -32,10 +32,10 @@ public class PlayerHurt : State
         Tween tween = new Tween();
         tween.Name = "Tween";
         AddChild(tween);
-        tween.InterpolateProperty(player, "modulate:a", 1, 0, 3f);
+        tween.InterpolateProperty(player, "modulate:a", 1, 0, 1f);
         tween.Start();
         await ToSignal(tween, "tween_completed");
-        tween.InterpolateProperty(player, "modulate:a", 0, 1, 1f);
+        tween.InterpolateProperty(player, "modulate:a", 0, 1, 0.3f);
         
         tween.Start();
         await ToSignal(tween, "tween_completed");

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://animations/Blue Snake/Snake 2.png" type="Texture" id=1]
 [ext_resource path="res://animations/Blue Snake/Snake 0.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/SnakeMob.cs" type="Script" id=5]
 [ext_resource path="res://scenes/InteractableTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://animations/Blue Snake/Snake 3.png" type="Texture" id=7]
+[ext_resource path="res://scripts/DamageTrigger.cs" type="Script" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -38,6 +39,8 @@ playing = true
 scale = Vector2( 12, 9 )
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 8 )
+Damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -16, 30 )
