@@ -33,6 +33,7 @@ window/stretch/aspect="keep"
 
 window=false
 size=false
+Android=false
 
 [gui]
 

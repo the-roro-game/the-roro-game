@@ -18,7 +18,7 @@ public class Chest : Node2D
     public override void _Process(float delta)
     {
         InteractableTrigger trigger = GetNode<InteractableTrigger>("Interactable");
-
+        
         if (Input.IsActionJustPressed("ui_interact") && trigger.IsTrigger && !opened)
         {
             opened = true;

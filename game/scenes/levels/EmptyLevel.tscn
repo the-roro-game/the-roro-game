@@ -1,14 +1,28 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/LevelHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/DirectionGenerator.cs" type="Script" id=5]
-[ext_resource path="res://scripts/DamageTrigger.cs" type="Script" id=6]
+[ext_resource path="res://scenes/Mobs/SnakeMob.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Mobs/ElephantPHPMob.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Mobs/CrabMob.tscn" type="PackedScene" id=8]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 35.0
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 4.45449, 30.2906, -4.45449, -30.2906, 108, 172, -91.7626, -54.3448, 91.7626, 54.3448, 314, 186, -11.5817, -69.4901, 11.5817, 69.4901, 439, 270, 32.9633, 47.2176, -32.9633, -47.2176, 124, 261, 0, 0, 0, 0, 108, 172 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 53, 321, 0, 0, 0, 0, 4, 389, 0, 0, 0, 0, 56, 451, 0, 0, 0, 0, 53, 321 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 595, 515, 0, 0, 0, 0, 904, 599, 0, 0, 0, 0, 1169, 511, 0, 0, 0, 0, 595, 515 )
+}
 
 [node name="EmptyLevel" type="Node2D"]
 position = Vector2( -1, 0 )
@@ -25,12 +39,39 @@ format = 1
 
 [node name="DirectionGenerator" type="Node" parent="."]
 script = ExtResource( 5 )
-Portal = ExtResource( 4 )
+DirectionScene = ExtResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 6 )
-Damage = 1
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 410, 50 )
-shape = SubResource( 1 )
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 108, 172 )
+rotation = 0.0427949
+rotate = false
+
+[node name="Snake" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( -0.999084, 0.0427856 )
+patrol_type = "loop"
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2( 53, 321 )
+offset = 287.8
+rotate = false
+
+[node name="KinematicBody2D" parent="Path2D2/PathFollow2D" instance=ExtResource( 7 )]
+position = Vector2( 68, 15.9998 )
+scale = Vector2( 2, 2 )
+patrol_type = "loop"
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2( 595, 515 )
+rotate = false
+
+[node name="KinematicBody2D" parent="Path2D3/PathFollow2D" instance=ExtResource( 8 )]
+patrol_type = "loop"
