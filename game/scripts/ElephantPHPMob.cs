@@ -1,15 +1,17 @@
 using Godot;
 using System;
 
-public class SnakeMob : KinematicBody2D
-{
-    private KinematicBody2D player = null;
+public class ElephantPHPMob : KinematicBody2D
+{private KinematicBody2D player = null;
 
-    private int speed = 30;
+    private int speed = 9;
     private String state = "fight";
+    private const double Shooter_timer = 3;
     [Export(PropertyHint.Enum,"linear,loop")] private String patrol_type = "linear";
     
     PathFollow2D path = null;
+    PackedScene Bullet_scene = (PackedScene) ResourceLoader.Load("res://scenes/BossPat/Bullet.tscn");
+    private Timer shoot_timer = null;
     
 
     // Declare member variables here. Examples:
@@ -17,14 +19,29 @@ public class SnakeMob : KinematicBody2D
     // private string b = "text";
 
     // Called when the node enters the scene tree for the first time.
-    
+
+    public override void _Ready()
+    {
+        shoot_timer = GetNode<Timer>("ShootTimer");
+        
+
+        shoot_timer.WaitTime = (float) Shooter_timer;
+        shoot_timer.Start();
+        
+    }
+
     public override void _Process(float delta)
     {
         InteractableTrigger trigger = GetNode<InteractableTrigger>("Interactable");
-        if (trigger.IsTrigger)
+        InteractableTrigger trigger2 = GetNode<InteractableTrigger>("Interactable2");
+        if (trigger.IsTrigger && !trigger2.IsTrigger)
         {
             state = "fight";
             surveyCorps(delta);
+        }
+        else if (trigger2.IsTrigger)
+        {
+            state = "fire";
         }
         else
         {
@@ -46,9 +63,17 @@ public class SnakeMob : KinematicBody2D
     {   
         path = GetParent<PathFollow2D>();
         path.Offset += speed*delta;
-
+        
         
     }
+
+    private void _on_ShootTimer_timeout()
+    {
+        if (state != "fire") return;
+        Node2D bullet = Bullet_scene.Instance<Node2D>();
+        AddChild(bullet);
+    }
+
 
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,3 +82,4 @@ public class SnakeMob : KinematicBody2D
 //      
 //  }
 }
+

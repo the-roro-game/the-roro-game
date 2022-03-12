@@ -10,7 +10,7 @@ public class Bullet : Node2D
 	
 	public override void _Process(float delta)
 	{
-		Position += Transform.x * Speed * delta;
+		GlobalPosition += Transform.x * Speed * delta;
 	}
 	
 	private void _on_KillTimer_timeout()
