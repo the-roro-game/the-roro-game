@@ -12,4 +12,4 @@ script = ExtResource( 2 )
 Name = "Coin"
 Icon = SubResource( 1 )
 Description = "A basic capsule coin for making a mesh size(by joh)"
-SignalName = "AddingCoin"
+SignalName = "GiveMoney"

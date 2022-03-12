@@ -5,7 +5,7 @@ public class EmptyLevel : Node2D
 {
     [Export] public PackedScene CharacterScene;
 
-    public override void _Ready()
+    public override void _EnterTree()
     {
         var characterInst = (Player) CharacterScene.Instance();
         var startPosition = GetNode<Position2D>("StartPosition");

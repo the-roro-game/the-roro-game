@@ -7,6 +7,6 @@ namespace therorogame.scripts
         [Export] public string Name;
         [Export] public AnimatedTexture Icon;
         [Export] public string Description;
-        [Export] public string SignalName = "";
+        [Export] public string SignalName = "GiveMoney";
     }
 }

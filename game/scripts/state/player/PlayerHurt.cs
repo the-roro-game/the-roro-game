@@ -9,10 +9,19 @@ public class PlayerHurt : State
         Player player = GetOwner<Player>();
         // player.Velocity = Vector2.Zero;
         player.GetNode<AnimatedSprite>("AnimatedSprite").Animation = "idle";
-        player.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+        CallDeferred(nameof(EnterStatDeffered), player);
         StartHurt();
     }
 
+    public void EnterStatDeffered(Player player)
+    {
+        player.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+    }
+
+    public void ExitStateDeffered(Player player)
+    {
+        player.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
+    }
 
     public async void StartHurt()
     {
@@ -36,7 +45,7 @@ public class PlayerHurt : State
     {
         Player player = GetOwner<Player>();
         player.Velocity = Vector2.Zero;
-        // player.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
         player.RotationDegrees = 0;
+        ExitStateDeffered(player);
     }
 }

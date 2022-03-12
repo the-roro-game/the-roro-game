@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/LevelHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/DirectionButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/DirectionGenerator.cs" type="Script" id=5]
-[ext_resource path="res://scenes/Stats.tscn" type="PackedScene" id=6]
 
 [node name="EmptyLevel" type="Node2D"]
 position = Vector2( -1, 0 )
@@ -23,5 +22,3 @@ format = 1
 [node name="DirectionGenerator" type="Node" parent="."]
 script = ExtResource( 5 )
 DirectionScene = ExtResource( 4 )
-
-[node name="Stats" parent="." instance=ExtResource( 6 )]

@@ -31,6 +31,8 @@ namespace therorogame.scripts
         public delegate void TakeDamage(int damage);
 
         [Signal]
-        public delegate void GiveMoney(int money);
+        public delegate void GiveMoney(int money = 1);
+
+        
     }
 }

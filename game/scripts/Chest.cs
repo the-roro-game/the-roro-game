@@ -27,6 +27,10 @@ public class Chest : Node2D
             GetNode<AnimatedSprite>("sprite").Animation = "open";
             trigger.DisableCollision();
             Notification notification = new Notification(item.Icon, $"give {item.Name}", 2);
+            if (item.SignalName != "")
+            {
+                events.EmitSignal(item.SignalName, 1);
+            }
 
             events.EmitSignal(nameof(Events.EmitNotification), notification);
         }

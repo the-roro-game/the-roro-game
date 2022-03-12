@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using therorogame.data;
 using therorogame.scripts;
 
 public class LevelHUD : CanvasLayer
@@ -28,5 +29,11 @@ public class LevelHUD : CanvasLayer
         Label interactText = GetNode<Label>("InteractText");
         interactText.Visible = false;
         interactText.Text = "";
+    }
+
+    public StatsManager GetStatsManager()
+    {
+        GD.Print(GetTree().CurrentScene.GetNode<Player>("Player").GetChildren().ToString());
+        return GetTree().CurrentScene.GetNode<StatsManager>("Player/StatsManager");
     }
 }

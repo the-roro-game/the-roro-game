@@ -1,27 +1,21 @@
 using Godot;
 using System;
 using therorogame.scripts;
-using therorogame.scripts.stats;
 
-public class CoinViewer : Label
+
+public class CoinViewer : Control
 {
     public override void _Ready()
     {
         StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
-        CoinStat coinStat = statsManager.GetStat<CoinStat>("CoinStat");
-        if (coinStat != default)
-        {
-            coinStat.Connect(nameof(CoinStat.UpdateValue), this, nameof(OnCoinChange));
-            OnCoinChange(coinStat.StatValue);
-        }
-        else
-        {
-            Visible = false;
-        }
+        statsManager.Connect(nameof(StatsManager.StatsChanged), this, nameof(UpdateViewer));
+        UpdateViewer();
     }
 
-    public void OnCoinChange(int NewValue)
+    public void UpdateViewer()
     {
-        Text = NewValue.ToString();
+        StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
+
+        GetNode<Label>("coins").Text = statsManager.Coins.ToString();
     }
 }

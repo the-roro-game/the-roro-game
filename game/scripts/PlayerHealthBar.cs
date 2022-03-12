@@ -1,64 +1,57 @@
 using Godot;
-using System;
-using therorogame.scripts;
-using therorogame.scripts.stats;
 
-public class PlayerHealthBar : Control
+
+namespace therorogame.scripts
 {
-    public Texture GreenBar = ResourceLoader.Load<Texture>("res://arts/gui/greenbar.png");
-    public Texture YellowBar = ResourceLoader.Load<Texture>("res://arts/gui/yellowbar.png");
-    public Texture RedBar = ResourceLoader.Load<Texture>("res://arts/gui/redbar.png");
-
-    public override void _Ready()
+    public class PlayerHealthBar : Control
     {
-        StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
-        LifeStat lifeStat = statsManager.GetStat<LifeStat>("LifeStat");
-        if (lifeStat != default)
-        {
-            lifeStat.Connect(nameof(LifeStat.UpdateLife), this, nameof(OnPlayerLifeChange));
-            OnPlayerLifeChange(lifeStat.StatValue, lifeStat.MaxLife);
+        public Texture GreenBar = ResourceLoader.Load<Texture>("res://arts/gui/greenbar.png");
+        public Texture YellowBar = ResourceLoader.Load<Texture>("res://arts/gui/yellowbar.png");
+        public Texture RedBar = ResourceLoader.Load<Texture>("res://arts/gui/redbar.png");
 
-        }
-        else
+        public override void _Ready()
         {
-            Visible = false;
+            StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
+            statsManager.Connect(nameof(StatsManager.StatsChanged), this, nameof(UpdateViewer));
+            UpdateViewer();
         }
 
-    }
-
-    public void OnPlayerLifeChange(int NewLife, int MaxLife)
-    {
-        UpdateBar(NewLife, MaxLife);
-        UpdateValues(NewLife, MaxLife);
-    }
-
-
-    private void UpdateBar(int NewLife, int MaxLife)
-    {
-        var HealthBar = GetNode<TextureProgress>("HealthBar");
-        Tween tween = new Tween();
-        AddChild(tween);
-        tween.InterpolateProperty(HealthBar, "value", HealthBar.Value, NewLife, 1f, Tween.TransitionType.Back);
-        tween.Start();
-        HealthBar.MaxValue = MaxLife;
-        HealthBar.TextureProgress_ = GreenBar;
-        if (NewLife < MaxLife * 0.7)
+        public void UpdateViewer()
         {
-            HealthBar.TextureProgress_ = YellowBar;
+            StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
+            UpdateBar(statsManager);
+            UpdateValues(statsManager);
         }
 
-        if (NewLife < MaxLife * 0.35)
+
+        private void UpdateBar(StatsManager statsManager)
         {
-            HealthBar.TextureProgress_ = RedBar;
+            var HealthBar = GetNode<TextureProgress>("HealthBar");
+            Tween tween = new Tween();
+            AddChild(tween);
+            tween.InterpolateProperty(HealthBar, "value", HealthBar.Value, statsManager.Life, 1f,
+                Tween.TransitionType.Back);
+            tween.Start();
+            HealthBar.MaxValue = statsManager.MaxLife;
+            HealthBar.TextureProgress_ = GreenBar;
+            if (statsManager.Life < statsManager.MaxLife * 0.7)
+            {
+                HealthBar.TextureProgress_ = YellowBar;
+            }
+
+            if (statsManager.Life < statsManager.MaxLife * 0.35)
+            {
+                HealthBar.TextureProgress_ = RedBar;
+            }
+
+            // RemoveChild(tween);
+            // tween.QueueFree();
         }
 
-        // RemoveChild(tween);
-        // tween.QueueFree();
-    }
-
-    private void UpdateValues(int NewLife, int MaxLife)
-    {
-        var Value = GetNode<Label>("HealthValues");
-        Value.Text = $"{NewLife}/{MaxLife}";
+        private void UpdateValues(StatsManager statsManager)
+        {
+            var Value = GetNode<Label>("HealthValues");
+            Value.Text = $"{statsManager.Life}/{statsManager.MaxLife}";
+        }
     }
 }
