@@ -4,7 +4,7 @@ using System;
 public class ElephantPHPMob : KinematicBody2D
 {private KinematicBody2D player = null;
 
-    private int speed = 9;
+    private int speed = 10;
     private String state = "fight";
     private const double Shooter_timer = 3;
     [Export(PropertyHint.Enum,"linear,loop")] private String patrol_type = "linear";
@@ -33,15 +33,10 @@ public class ElephantPHPMob : KinematicBody2D
     public override void _Process(float delta)
     {
         InteractableTrigger trigger = GetNode<InteractableTrigger>("Interactable");
-        InteractableTrigger trigger2 = GetNode<InteractableTrigger>("Interactable2");
-        if (trigger.IsTrigger && !trigger2.IsTrigger)
-        {
-            state = "fight";
-            surveyCorps(delta);
-        }
-        else if (trigger2.IsTrigger)
+        if (trigger.IsTrigger)
         {
             state = "fire";
+            
         }
         else
         {
@@ -50,14 +45,7 @@ public class ElephantPHPMob : KinematicBody2D
         }
 
     }
-
-    public void surveyCorps(float delta)
-    {   
-        
-        var player = GetTree().CurrentScene.GetNode<KinematicBody2D>("Player");
-        var move = player.Position - GlobalPosition;
-        Position += move * delta;
-    }
+    
 
     public void militaryPolice(float delta)
     {   

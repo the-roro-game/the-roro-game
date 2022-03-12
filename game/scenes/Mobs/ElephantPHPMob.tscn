@@ -32,15 +32,15 @@ script = ExtResource( 13 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "PHP"
-frame = 3
+frame = 6
 playing = true
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 
 [node name="Interactable" parent="." instance=ExtResource( 12 )]
-position = Vector2( 136, 15 )
-scale = Vector2( 18, 4 )
+position = Vector2( 245, 15 )
+scale = Vector2( 30, 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -48,9 +48,5 @@ scale = Vector2( 18, 4 )
 position = Vector2( -12, 19 )
 rotation = 1.5708
 shape = SubResource( 2 )
-
-[node name="Interactable2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 107, 14 )
-scale = Vector2( 15, 3 )
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
