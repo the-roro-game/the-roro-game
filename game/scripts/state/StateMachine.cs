@@ -9,7 +9,7 @@ public class StateMachine : Node
 
     [Export] public NodePath InitialState;
 
-    private State CurrState;
+    public State CurrState;
 
     public override void _Ready()
     {

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stream-Countdown-10s.mp3-fa17320eed1f4bac29b93b1c4b185995.mp3str"
+
+[deps]
+
+source_file="res://sounds/Stream-Countdown-10s.mp3"
+dest_files=[ "res://.import/Stream-Countdown-10s.mp3-fa17320eed1f4bac29b93b1c4b185995.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

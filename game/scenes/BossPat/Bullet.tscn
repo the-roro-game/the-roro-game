@@ -12,11 +12,9 @@ light_mask = 2
 scale = Vector2( 0.01, 0.01 )
 texture = ExtResource( 2 )
 
-[node name="KillTimer" type="Timer" parent="."]
-wait_time = 10.0
-
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 scale = Vector2( 0.2, 0.159999 )
 Damage = 2
+DeleteOnHit = true
 
-[connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]
+[node name="notifier" type="VisibilityNotifier2D" parent="."]

@@ -24,6 +24,7 @@ public class InteractableTrigger : Node2D
     {
         if (GroupTrigger == "" || body.IsInGroup(GroupTrigger))
         {
+            GD.Print("interactable");
             Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
             events.EmitSignal(nameof(Events.TriggerInteract), InteractName);
             IsTrigger = true;

@@ -13,7 +13,7 @@ radius = 60.2333
 height = 172.609
 
 [node name="Player" type="KinematicBody2D" groups=["interactor"]]
-collision_mask = 0
+collision/safe_margin = 0.001
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true

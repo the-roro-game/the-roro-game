@@ -6,10 +6,12 @@ public class PlayerHurt : State
 {
     public override void EnterState(Dictionary<string, string> _datas = null)
     {
+        GD.Print("hurt");
         Player player = GetOwner<Player>();
+        player.IsInvincible = true;
         // player.Velocity = Vector2.Zero;
         player.GetNode<AnimatedSprite>("AnimatedSprite").Animation = "idle";
-        CallDeferred(nameof(EnterStatDeffered), player);
+        // CallDeferred(nameof(EnterStatDeffered), player);
         StartHurt();
     }
 
@@ -30,22 +32,28 @@ public class PlayerHurt : State
         Tween tween = new Tween();
         tween.Name = "Tween";
         AddChild(tween);
-        tween.InterpolateProperty(player, "modulate:a", 1, 0, 0.4f);
+        tween.InterpolateProperty(player, "modulate:a", 1, 0, 1.2f);
         tween.Start();
         await ToSignal(tween, "tween_completed");
-        tween.InterpolateProperty(player, "modulate:a", 0, 1, 0.1f);
+        tween.InterpolateProperty(player, "modulate:a", 0, 1, 0.3f);
 
         tween.Start();
         await ToSignal(tween, "tween_completed");
         StateMachine.TransitionTo("PlayerIdle");
     }
 
+    public override void PhysicsUpdate(float _delta)
+    {
+        Player player = GetOwner<Player>();
+        player.ApplyMovement(_delta);
+    }
 
     public override void ExitState()
     {
         Player player = GetOwner<Player>();
         player.Velocity = Vector2.Zero;
         player.RotationDegrees = 0;
-        ExitStateDeffered(player);
+        player.IsInvincible = false;
+        // CallDeferred(nameof(ExitStateDeffered), player);
     }
 }
