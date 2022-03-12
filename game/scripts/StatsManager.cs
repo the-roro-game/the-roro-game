@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Godot;
 using therorogame.data;
 
@@ -8,68 +11,68 @@ namespace therorogame.scripts
         [Signal]
         public delegate void StatsChanged();
 
-        private int _maxLife;
+        private readonly Dictionary<string, object> _stats = new Dictionary<string, object>();
 
-        [Export]
-        public int MaxLife
-        {
-            get => _maxLife;
-            set
-            {
-                _maxLife = value;
-                EmitSignal(nameof(StatsChanged));
-            }
-        }
 
-        private int _life;
-
-        [Export]
-        public int Life
-        {
-            get => _life;
-            set
-            {
-                _life = value;
-                EmitSignal(nameof(StatsChanged));
-            }
-        }
-
-        private int _coins;
-
-        [Export]
-        public int Coins
-        {
-            get => _coins;
-            set
-            {
-                _coins = value;
-                EmitSignal(nameof(StatsChanged));
-            }
-        }
-
-        public override void _Ready()
+        public override void _EnterTree()
         {
             Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
             events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
             events.Connect(nameof(Events.TakeDamage), this, nameof(OnTakeDamage));
             events.Connect(nameof(Events.GiveMoney), this, nameof(OnGetMoney));
+            CreateStat<int>("LifeStat", 0);
+            CreateStat<int>("MaxLifeStat", 100);
+            CreateStat<int>("CoinsStat", 0);
+
+            StatChanged();
+        }
+
+
+        public void CreateStat<T>(string statName, T defaultValue)
+        {
+            _stats.Add(statName, defaultValue);
+        }
+
+        public T GetStat<T>(string statName)
+        {
+            if (_stats.ContainsKey(statName))
+            {
+                return (T) _stats[statName];
+            }
+
+            return default;
+        }
+
+        public void UpdateStat<T>(string statName, T newValue)
+        {
+            if (_stats.ContainsKey(statName))
+            {
+                _stats[statName] = newValue;
+                StatChanged();
+            }
+        }
+
+        private void OnCharacterChange(BaseCharacter newCharacter)
+        {
+            UpdateStat("LifeStat", newCharacter.Health);
+            UpdateStat("MaxLifeStat", newCharacter.MaxHealth);
+        }
+
+        private void OnTakeDamage(int damage)
+        {
+            int LifeStat = GetStat<int>("LifeStat");
+            UpdateStat("LifeStat", LifeStat - damage);
+        }
+
+        private void OnGetMoney(int money)
+        {
+            int CoinsStat = GetStat<int>("CoinsStat");
+            UpdateStat("CoinsStat", CoinsStat + money);
+        }
+
+        public void StatChanged()
+        {
             EmitSignal(nameof(StatsChanged));
-        }
-
-        public void OnCharacterChange(BaseCharacter newCharacter)
-        {
-            MaxLife = newCharacter.MaxHealth;
-            Life = newCharacter.Health;
-        }
-
-        public void OnTakeDamage(int damage)
-        {
-            Life -= damage;
-        }
-
-        public void OnGetMoney(int money)
-        {
-            Coins += money;
         }
     }
 }

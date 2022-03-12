@@ -33,7 +33,6 @@ public class LevelHUD : CanvasLayer
 
     public StatsManager GetStatsManager()
     {
-        GD.Print(GetTree().CurrentScene.GetNode<Player>("Player").GetChildren().ToString());
         return GetTree().CurrentScene.GetNode<StatsManager>("Player/StatsManager");
     }
 }

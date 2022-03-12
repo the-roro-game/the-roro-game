@@ -15,7 +15,8 @@ public class CoinViewer : Control
     public void UpdateViewer()
     {
         StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
-
-        GetNode<Label>("coins").Text = statsManager.Coins.ToString();
+        int coinsStat = statsManager.GetStat<int>("CoinsStat");
+        if (coinsStat != default)
+            GetNode<Label>("coins").Text = coinsStat.ToString();
     }
 }

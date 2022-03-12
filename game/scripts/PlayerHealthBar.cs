@@ -19,39 +19,46 @@ namespace therorogame.scripts
         public void UpdateViewer()
         {
             StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
-            UpdateBar(statsManager);
-            UpdateValues(statsManager);
+            if (statsManager != null)
+            {
+                UpdateBar(statsManager);
+                UpdateValues(statsManager);
+            }
         }
 
 
         private void UpdateBar(StatsManager statsManager)
         {
             var HealthBar = GetNode<TextureProgress>("HealthBar");
+            int Life = statsManager.GetStat<int>("LifeStat");
+            int MaxLife = statsManager.GetStat<int>("MaxLifeStat");
+           
+
             Tween tween = new Tween();
             AddChild(tween);
-            tween.InterpolateProperty(HealthBar, "value", HealthBar.Value, statsManager.Life, 1f,
+            tween.InterpolateProperty(HealthBar, "value", HealthBar.Value, Life, 1f,
                 Tween.TransitionType.Back);
             tween.Start();
-            HealthBar.MaxValue = statsManager.MaxLife;
+            HealthBar.MaxValue = MaxLife;
             HealthBar.TextureProgress_ = GreenBar;
-            if (statsManager.Life < statsManager.MaxLife * 0.7)
+            if (Life < MaxLife * 0.7)
             {
                 HealthBar.TextureProgress_ = YellowBar;
             }
 
-            if (statsManager.Life < statsManager.MaxLife * 0.35)
+            if (Life < MaxLife * 0.35)
             {
                 HealthBar.TextureProgress_ = RedBar;
             }
-
-            // RemoveChild(tween);
-            // tween.QueueFree();
         }
 
         private void UpdateValues(StatsManager statsManager)
         {
+            int Life = statsManager.GetStat<int>("LifeStat");
+            int MaxLife = statsManager.GetStat<int>("MaxLifeStat");
             var Value = GetNode<Label>("HealthValues");
-            Value.Text = $"{statsManager.Life}/{statsManager.MaxLife}";
+
+            Value.Text = $"{Life}/{MaxLife}";
         }
     }
 }
