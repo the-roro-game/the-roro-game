@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/LevelHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/DirectionGenerator.cs" type="Script" id=5]
+[ext_resource path="res://scripts/DamageTrigger.cs" type="Script" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 35.0
 
 [node name="EmptyLevel" type="Node2D"]
 position = Vector2( -1, 0 )
@@ -21,4 +25,12 @@ format = 1
 
 [node name="DirectionGenerator" type="Node" parent="."]
 script = ExtResource( 5 )
-DirectionScene = ExtResource( 4 )
+Portal = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 6 )
+Damage = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 410, 50 )
+shape = SubResource( 1 )

@@ -1,12 +1,13 @@
 using Godot;
 using System;
 using therorogame.scripts;
+using Portal = Godot.Portal;
 
 public class DirectionGenerator : Node
 {
     public Vector2 screenSize;
 
-    [Export] public PackedScene DirectionScene;
+    [Export] public PackedScene Portal;
 
     public override void _Ready()
     {
@@ -27,7 +28,8 @@ public class DirectionGenerator : Node
         PossibleDirections possibleDirections = lm.GetPossibleDirections(lm.X, lm.Y);
 
 
-        CreateDirectionTrigger(0, -1, "up", possibleDirections.Up, new Vector2(screenSize.x / 2, 64), Colors.Aquamarine);
+        CreateDirectionTrigger(0, -1, "up", possibleDirections.Up, new Vector2(screenSize.x / 2, 64),
+            Colors.Aquamarine);
         CreateDirectionTrigger(1, 0, "right", possibleDirections.Right,
             new Vector2(screenSize.x - 64, screenSize.y / 2), Colors.Purple);
         CreateDirectionTrigger(0, 1, "down", possibleDirections.Down, new Vector2(screenSize.x / 2, screenSize.y - 64),
@@ -39,15 +41,15 @@ public class DirectionGenerator : Node
     {
         if (visibility)
         {
-            DirectionButton direction = DirectionScene.Instance<DirectionButton>();
-            direction.Position = position;
-            direction.XOffset = x;
-            direction.YOffset = y;
-            direction.Name = nodeName;
-            AnimatedSprite sprite = direction.GetNode<AnimatedSprite>("AnimatedSprite");
+            PortalDirection portal = Portal.Instance<PortalDirection>();
+            portal.Position = position;
+            portal.XOffset = x;
+            portal.YOffset = y;
+            portal.Name = nodeName;
+            AnimatedSprite sprite = portal.GetNode<AnimatedSprite>("AnimatedSprite");
             sprite.SelfModulate = color;
-            // direction.RotationDegrees = rotation;
-            AddChild(direction);
+            // portal.RotationDegrees = rotation;
+            AddChild(portal);
         }
     }
 }

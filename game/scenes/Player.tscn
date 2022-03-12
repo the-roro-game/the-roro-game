@@ -12,7 +12,8 @@
 radius = 60.2333
 height = 172.609
 
-[node name="Player" type="KinematicBody2D" groups=["interactor"]]
+[node name="Player" type="KinematicBody2D" groups=["interactor", "player"]]
+position = Vector2( -1, 0 )
 collision/safe_margin = 0.001
 script = ExtResource( 3 )
 __meta__ = {
