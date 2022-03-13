@@ -30,9 +30,9 @@ namespace therorogame.scripts
         private void UpdateBar(StatsManager statsManager)
         {
             var HealthBar = GetNode<TextureProgress>("HealthBar");
-            int Life = statsManager.GetStat<int>("LifeStat");
-            int MaxLife = statsManager.GetStat<int>("MaxLifeStat");
-           
+            int Life = statsManager.GetStat<int>("LifeStat").Value;
+            int MaxLife = statsManager.GetStat<int>("MaxLifeStat").Value;
+
 
             Tween tween = new Tween();
             AddChild(tween);
@@ -54,8 +54,8 @@ namespace therorogame.scripts
 
         private void UpdateValues(StatsManager statsManager)
         {
-            int Life = statsManager.GetStat<int>("LifeStat");
-            int MaxLife = statsManager.GetStat<int>("MaxLifeStat");
+            int Life = statsManager.GetStat<int>("LifeStat").Value;
+            int MaxLife = statsManager.GetStat<int>("MaxLifeStat").Value;
             var Value = GetNode<Label>("HealthValues");
 
             Value.Text = $"{Life}/{MaxLife}";

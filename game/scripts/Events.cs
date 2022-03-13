@@ -33,6 +33,10 @@ namespace therorogame.scripts
         [Signal]
         public delegate void GiveMoney(int money = 1);
 
-        
+        [Signal]
+        public delegate void TriggerShop();
+
+        [Signal]
+        public delegate void CloseHud();
     }
 }

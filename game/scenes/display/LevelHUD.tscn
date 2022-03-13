@@ -10,8 +10,8 @@
 [ext_resource path="res://scenes/display/NotificationItem.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/display/CoinDisplay.tscn" type="PackedScene" id=9]
 
-
 [node name="CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 1 )
 button = ExtResource( 2 )
 
@@ -38,20 +38,21 @@ __meta__ = {
 }
 
 [node name="HealthDisplay" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_bottom = 64.0
 
 [node name="CoinDisplay" parent="HBoxContainer" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 204.0
-margin_right = 250.0
-margin_bottom = 25.0
+margin_right = 283.0
+margin_bottom = 64.0
 size_flags_horizontal = 7
 size_flags_vertical = 7
 
 [node name="CurrPos" type="Label" parent="HBoxContainer"]
-margin_left = 254.0
+margin_left = 287.0
 margin_right = 300.0
-margin_bottom = 25.0
+margin_bottom = 64.0
 size_flags_horizontal = 7
 size_flags_vertical = 7
 

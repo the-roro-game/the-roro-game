@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scenes/Mobs/SnakeMob.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Mobs/ElephantPHPMob.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Mobs/CrabMob.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/ShopTrigger.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/display/ShopDisplay.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -36,6 +38,7 @@ position = Vector2( 916, 486 )
 format = 1
 
 [node name="LevelHUD" parent="." instance=ExtResource( 3 )]
+shop = ExtResource( 10 )
 
 [node name="DirectionGenerator" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -74,3 +77,7 @@ rotate = false
 
 [node name="KinematicBody2D" parent="Path2D3/PathFollow2D" instance=ExtResource( 8 )]
 patrol_type = "loop"
+
+[node name="ShopTrigger" parent="." instance=ExtResource( 9 )]
+position = Vector2( 720, 84 )
+scale = Vector2( 10.84, 5.08 )

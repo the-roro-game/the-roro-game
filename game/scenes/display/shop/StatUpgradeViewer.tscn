@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://arts/bullet.png" type="Texture" id=1]
+[ext_resource path="res://scripts/shop/StatsUpgradeViewer.cs" type="Script" id=2]
+
+[node name="Viewer" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_bottom = -452.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+StatName = NodePath("StatName")
+StatDesc = NodePath("StatDesc")
+StatIcon = NodePath("HBoxContainer/StatIcon")
+StatPrice = NodePath("HBoxContainer2/StatPrice")
+StatQuantity = NodePath("HBoxContainer/StatQuantity")
+BuyModifier = NodePath("HBoxContainer2/Button")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1279.0
+margin_bottom = 64.0
+alignment = 1
+
+[node name="StatIcon" type="TextureRect" parent="HBoxContainer"]
+margin_left = 595.0
+margin_right = 659.0
+margin_bottom = 64.0
+grow_horizontal = 2
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="StatQuantity" type="Label" parent="HBoxContainer"]
+margin_left = 663.0
+margin_top = 22.0
+margin_right = 684.0
+margin_bottom = 42.0
+text = "x1"
+
+[node name="StatName" type="Label" parent="."]
+margin_top = 68.0
+margin_right = 1279.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "StatName"
+align = 1
+
+[node name="StatDesc" type="Label" parent="."]
+margin_top = 92.0
+margin_right = 1279.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "StatDesc"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 116.0
+margin_right = 1279.0
+margin_bottom = 142.0
+
+[node name="Button" type="Button" parent="HBoxContainer2"]
+margin_right = 1195.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "BUY"
+
+[node name="StatPrice" type="Label" parent="HBoxContainer2"]
+margin_left = 1199.0
+margin_top = 3.0
+margin_right = 1279.0
+margin_bottom = 23.0
+text = "curr price"

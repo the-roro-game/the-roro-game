@@ -6,6 +6,8 @@ using therorogame.scripts;
 public class LevelHUD : CanvasLayer
 {
     [Export] public PackedScene button;
+    [Export] public PackedScene shop;
+
 
     public override void _Ready()
     {
@@ -15,6 +17,8 @@ public class LevelHUD : CanvasLayer
         Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         events.Connect(nameof(Events.TriggerInteract), this, nameof(EnableInteractText));
         events.Connect(nameof(Events.ExitInteract), this, nameof(DisableInteractText));
+        events.Connect(nameof(Events.TriggerShop), this, nameof(TriggerShop));
+        events.Connect(nameof(Events.CloseHud), this, nameof(CloseHud));
     }
 
     public void EnableInteractText(string text)
@@ -29,6 +33,18 @@ public class LevelHUD : CanvasLayer
         Label interactText = GetNode<Label>("InteractText");
         interactText.Visible = false;
         interactText.Text = "";
+    }
+
+    public void TriggerShop()
+    {
+        ShopDisplay shopDisplay = shop.Instance<ShopDisplay>();
+        AddChild(shopDisplay);
+        GetTree().Paused = true;
+    }
+
+    public void CloseHud()
+    {
+        GetTree().Paused = false;
     }
 
     public StatsManager GetStatsManager()

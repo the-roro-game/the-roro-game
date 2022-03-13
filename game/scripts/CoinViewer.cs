@@ -14,9 +14,10 @@ public class CoinViewer : Control
 
     public void UpdateViewer()
     {
+        GD.Print("update coins");
         StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
-        int coinsStat = statsManager.GetStat<int>("CoinsStat");
+        StatHandler<int> coinsStat = statsManager.GetStat<int>("CoinsStat");
         if (coinsStat != default)
-            GetNode<Label>("coins").Text = coinsStat.ToString();
+            GetNode<Label>("coins").Text = coinsStat.Value.ToString();
     }
 }

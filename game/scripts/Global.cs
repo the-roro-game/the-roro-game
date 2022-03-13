@@ -5,6 +5,7 @@ using therorogame.scripts;
 
 public class Global : Node
 {
+
     private BaseCharacter _currCharacter;
 
     public BaseCharacter CurrCharacter
