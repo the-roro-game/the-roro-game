@@ -667,3 +667,6 @@ cell_size = Vector2( 32, 32 )
 
 [node name="Boss" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 607, 347 )
+
+[node name="KinematicBody2D" parent="Path2D2/PathFollow2D" index="0"]
+patrol_type = null
