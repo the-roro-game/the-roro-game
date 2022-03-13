@@ -38,7 +38,9 @@ public class SnakeMob : KinematicBody2D
     {   
         
         var player = GetTree().CurrentScene.GetNode<KinematicBody2D>("Player");
-        var move = player.Position - GlobalPosition;
+        var move = Vector2.Zero;
+        move = player.GlobalPosition - GlobalPosition ;
+        
         Position += move * delta;
     }
 
