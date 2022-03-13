@@ -10,7 +10,7 @@ public class ElephantPHPMob : KinematicBody2D
     [Export(PropertyHint.Enum,"linear,loop")] private String patrol_type = "linear";
     
     PathFollow2D path = null;
-    PackedScene Bullet_scene = (PackedScene) ResourceLoader.Load("res://scenes/BossPat/Bullet.tscn");
+    [Export()]public PackedScene Bullet_scene;
     private Timer shoot_timer = null;
     
 

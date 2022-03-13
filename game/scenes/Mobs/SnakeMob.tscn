@@ -11,15 +11,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "EvilSnake",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Attack",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "EvilSnake",
+"speed": 3.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -31,6 +31,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "EvilSnake"
+frame = 3
 playing = true
 
 [node name="TimerAttack" type="Timer" parent="."]
@@ -38,9 +39,10 @@ playing = true
 [node name="Interactable" parent="." instance=ExtResource( 6 )]
 scale = Vector2( 12, 9 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["mobs"]]
 script = ExtResource( 8 )
 Damage = 5
+GroupTrigger = "player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -16, 30 )

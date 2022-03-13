@@ -4,7 +4,7 @@ using Godot.Collections;
 using therorogame.data;
 using therorogame.scripts;
 
-public class Player : KinematicBody2D
+public class Player : KinematicBody2D, Damageable
 {
     [Export] public int Speed = 400;
     private Vector2 ScreenSize;
@@ -53,6 +53,7 @@ public class Player : KinematicBody2D
         MoveAndCollide(Velocity);
     }
 
+
     public Vector2 Velocity = Vector2.Zero;
 
     public void UpdateCharacterStyle(BaseCharacter character)
@@ -77,5 +78,16 @@ public class Player : KinematicBody2D
     public void OnCharacterTakeDamage(int damage)
     {
         GetNode<StateMachine>("StateMachine").TransitionTo("PlayerHurt");
+    }
+
+    public void MakeDamages(int damages)
+    {
+        Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
+        events.EmitSignal(nameof(Events.TakeDamage), damages);
+    }
+
+    public bool CanTakeDamage()
+    {
+        return !IsInvincible;
     }
 }

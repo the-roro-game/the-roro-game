@@ -4,6 +4,14 @@ using Godot.Collections;
 
 public class PlayerIdle : State
 {
+    public override void HandleInput(InputEvent _event)
+    {
+        if (_event.IsAction("ui_distant"))
+        {
+            StateMachine.TransitionTo("PlayerDistantAttack");
+        }
+    }
+
     public override void EnterState(Dictionary<string, string> _datas = null)
     {
         Player player = GetOwner<Player>();

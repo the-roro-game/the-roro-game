@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/AbilityButton.cs" type="Script" id=1]
+[ext_resource path="res://arts/gui/btn_dist.png" type="Texture" id=2]
+
+[node name="AbilityButton" type="TouchScreenButton"]
+normal = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+CooldownTime = 3.0
+
+[node name="CooldownTexture" type="TextureProgress" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+fill_mode = 4
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Counter" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+
+[node name="Value" type="Label" parent="Counter"]
+margin_right = 64.0
+margin_bottom = 20.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "0.0"
+align = 2

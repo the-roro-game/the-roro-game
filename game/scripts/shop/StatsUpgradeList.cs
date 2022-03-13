@@ -18,11 +18,11 @@ namespace therorogame.scripts.shop
             GD.Print("view ", modifier.StatName);
             StatsUpgradeViewer viewer = PrepareViewer();
             Node viewers = GetNode<Node>(Viewers);
-            foreach (Node item in viewers.GetChildren())
-            {
-                viewers.RemoveChild(item);
-                item.QueueFree();
-            }
+            // foreach (Node item in viewers.GetChildren())
+            // {
+            //     viewers.RemoveChild(item);
+            //     item.QueueFree();
+            // }
 
             GetNode<Node>(Viewers).AddChild(viewer);
             viewer.ViewUpgrade(modifier);

@@ -9,9 +9,9 @@ public class PlayerRun : State
         Player player = GetOwner<Player>();
         player.ApplyMovement(_delta);
         
-        if (player.Velocity.IsEqualApprox(new Vector2(0, 0)))
-        {
-            StateMachine.TransitionTo("PlayerIdle");
-        }
+        // if (player.Velocity.IsEqualApprox(new Vector2(0, 0)))
+        // {
+        //     StateMachine.TransitionTo("PlayerIdle");
+        // }
     }
 }

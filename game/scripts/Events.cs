@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using therorogame.data;
 
@@ -28,7 +29,12 @@ namespace therorogame.scripts
         public delegate void EmitNotification(Notification notification);
 
         [Signal]
-        public delegate void TakeDamage(int damage);
+        public delegate void TakeDamage(int damage = 1);
+
+        [Signal]
+        public delegate void GiveHealth(int health = 1);
+
+    
 
         [Signal]
         public delegate void GiveMoney(int money = 1);
@@ -38,5 +44,8 @@ namespace therorogame.scripts
 
         [Signal]
         public delegate void CloseHud();
+
+        [Signal]
+        public delegate void GameOver();
     }
 }

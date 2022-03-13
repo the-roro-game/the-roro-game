@@ -48,7 +48,9 @@ namespace therorogame.scripts
             Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
             events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));
             events.Connect(nameof(Events.TakeDamage), this, nameof(OnTakeDamage));
+            events.Connect(nameof(Events.GiveHealth), this, nameof(OnGiveHealth));
             events.Connect(nameof(Events.GiveMoney), this, nameof(OnGetMoney));
+
             CreateStat<int>("LifeStat", 0, StatHandler<int>.IntStatModifier);
             CreateStat<int>("MaxLifeStat", 100, StatHandler<int>.IntStatModifier);
             CreateStat<int>("CoinsStat", 0, StatHandler<int>.IntStatModifier);
@@ -79,7 +81,7 @@ namespace therorogame.scripts
             if (_stats.ContainsKey(statName))
             {
                 ((StatHandler<T>) _stats[statName]).baseValue = newValue;
-                GD.Print("new coins:",((StatHandler<T>) _stats[statName]).Value);
+                GD.Print("new coins:", ((StatHandler<T>) _stats[statName]).Value);
                 StatChanged();
             }
         }
@@ -101,10 +103,27 @@ namespace therorogame.scripts
             UpdateStat("MaxLifeStat", newCharacter.MaxHealth);
         }
 
+        public void ResetLife()
+        {
+            UpdateStat("LifeStat", GetStat<int>("MaxLifeStat").Value);
+        }
+
         private void OnTakeDamage(int damage)
         {
-            int LifeStat = GetStat<int>("LifeStat").Value;
-            UpdateStat("LifeStat", LifeStat - damage);
+            StatHandler<int> LifeStat = GetStat<int>("LifeStat");
+            UpdateStat("LifeStat", LifeStat.Value - damage);
+            if (LifeStat.Value <= 0)
+            {
+                Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
+                events.EmitSignal(nameof(Events.GameOver));
+            }
+        }
+
+        private void OnGiveHealth(int health)
+        {
+            StatHandler<int> LifeStat = GetStat<int>("LifeStat");
+            StatHandler<int> MaxLifeStat = GetStat<int>("MaxLifeStat");
+            UpdateStat("LifeStat", Math.Min(MaxLifeStat.Value, LifeStat.Value + health));
         }
 
         private void OnGetMoney(int money)

@@ -18,6 +18,8 @@ public class CoinViewer : Control
         StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
         StatHandler<int> coinsStat = statsManager.GetStat<int>("CoinsStat");
         if (coinsStat != default)
+        {
             GetNode<Label>("coins").Text = coinsStat.Value.ToString();
+        }
     }
 }

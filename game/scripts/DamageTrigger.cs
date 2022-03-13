@@ -6,6 +6,7 @@ public class DamageTrigger : Node2D
 {
     [Export] public int Damage = 0;
     [Export] public bool DeleteOnHit = false;
+    [Export] public string GroupTrigger;
 
     public override void _Ready()
     {
@@ -14,19 +15,18 @@ public class DamageTrigger : Node2D
 
     public void TriggerEnter(Node body)
     {
-        if(DeleteOnHit)
-            GetOwner<Node2D>().QueueFree();
-
-        if (body.IsInGroup("player") && !body.GetNode<Player>(".").IsInvincible)
-
+       
+        Damageable damageable = body as Damageable;
+        if (damageable != null)
         {
-            Events events = (Events) GetNode<Events>(AutoloadPath.EVENTS_PATH);
-            events.EmitSignal(nameof(Events.TakeDamage), Damage);
-
-          
-               
+            if (body.IsInGroup(GroupTrigger) && damageable.CanTakeDamage())
+            {
+                damageable.MakeDamages(Damage);
+            }
+            
+             
         }
+        if (DeleteOnHit)
+            GetOwner<Node2D>().QueueFree();
     }
-
-    
 }

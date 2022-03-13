@@ -9,5 +9,9 @@ position = Vector2( 0, 0 )
 [node name="Boss" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 607, 347 )
 
+[node name="PathFollow2D" parent="Path2D2" index="0"]
+position = Vector2( 53, 321 )
+
 [node name="KinematicBody2D" parent="Path2D2/PathFollow2D" index="0"]
-patrol_type = null
+rotation = -0.00356156
+patrol_type = "linear"

@@ -12,4 +12,4 @@ script = ExtResource( 2 )
 Name = "Rat"
 Icon = SubResource( 1 )
 Description = "A big huge rat"
-SignalName = ""
+SignalName = "TakeDamage"

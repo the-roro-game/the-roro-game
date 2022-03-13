@@ -67,6 +67,7 @@ public class LevelsManager : Node
             return $"{directions.ToString()}\t";
         });
         events.Connect(nameof(Events.DirectionChange), this, nameof(OnDirectionChange));
+        events.Connect(nameof(Events.GameOver), this, nameof(OnGameOver));
     }
 
     private void ShowMap(CellRenderer Renderer)
@@ -157,5 +158,17 @@ public class LevelsManager : Node
     public void OnDirectionChange(int x, int y)
     {
         LoadLevel(X + x, Y + y);
+    }
+
+    public void OnGameOver()
+    {
+        StatsManager statsManager = (StatsManager) GetNode(AutoloadPath.STATS_PATH);
+        StatHandler<int> MaxLifeStat = statsManager.GetStat<int>("MaxLifeStat");
+        StatHandler<int> CoinsStat = statsManager.GetStat<int>("CoinsStat");
+
+        statsManager.UpdateStat("MaxLifeStat", MaxLifeStat.Value + 10);
+        statsManager.UpdateStat("CoinsStat", CoinsStat.Value + 10);
+        statsManager.ResetLife();
+        LoadLevel(0, 0);
     }
 }
