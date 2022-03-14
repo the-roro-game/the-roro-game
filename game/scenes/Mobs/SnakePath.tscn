@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/SnakeMob.cs" type="Script" id=1]
+[ext_resource path="res://scenes/Mobs/SnakeMob.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 4.45449, 30.2906, -4.45449, -30.2906, 108, 172, -91.7626, -54.3448, 91.7626, 54.3448, 314, 186, -11.5817, -69.4901, 11.5817, 69.4901, 439, 270, 32.9633, 47.2176, -32.9633, -47.2176, 124, 261, 0, 0, 0, 0, 108, 172 )
+}
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 108, 172 )
+rotation = 0.0427949
+rotate = false
+
+[node name="Snake" type="KinematicBody2D" parent="PathFollow2D" groups=["mobs"] instance=ExtResource( 2 )]
+collision_mask = 2
+script = ExtResource( 1 )
+patrol_type = "loop"

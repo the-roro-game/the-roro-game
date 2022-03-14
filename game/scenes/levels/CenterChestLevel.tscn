@@ -35,6 +35,3 @@ position = Vector2( 762, 295 )
 
 [node name="Chest9" parent="." index="12" instance=ExtResource( 2 )]
 position = Vector2( 874, 288 )
-
-[node name="PathFollow2D" parent="Path2D2" index="0"]
-position = Vector2( 53, 321 )

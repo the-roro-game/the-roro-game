@@ -14,6 +14,7 @@ public class Boss : Mob
     [Export] public PackedScene Bullet_scene;
     private Node2D rotater = null;
     private Timer shoot_timer = null;
+    public bool CanHit = false;
 
     // Called when the node enters the scene tree for the first time.
     public override async void GetDamages()
@@ -52,8 +53,11 @@ public class Boss : Mob
 
     public override void _Process(float delta)
     {
-        rotater = GetNode<Node2D>("Rotater");
-        circlePattern(rotater, delta);
+        if (CanHit)
+        {
+            rotater = GetNode<Node2D>("Rotater");
+            circlePattern(rotater, delta);
+        }
     }
 
     private void _on_ShootTimer_timeout()

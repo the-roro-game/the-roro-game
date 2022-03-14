@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/levels/EmptyLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/levels/BossLevel.cs" type="Script" id=3]
+[ext_resource path="res://scenes/BossPat/Boss.tscn" type="PackedScene" id=4]
+
+[node name="Boss" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+script = ExtResource( 3 )
+BossScene = ExtResource( 4 )
+
+[node name="StartBoss" type="Position2D" parent="." index="4"]
+position = Vector2( 595, -5 )
+
+[node name="EndBoss" type="Position2D" parent="." index="5"]
+position = Vector2( 602, 363 )

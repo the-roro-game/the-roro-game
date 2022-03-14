@@ -1,10 +1,12 @@
 using Godot;
 using System;
 
-public class AbilityButton : TextureButton
+public class AbilityButton : TouchScreenButton
 {
     private Label _timeLabel;
+
     private Timer _timer;
+
     // private TextureProgress _cooldownText;
     [Export] public float CooldownTime;
 
@@ -39,9 +41,10 @@ public class AbilityButton : TextureButton
 
     public void OnAbilityButtonPressed()
     {
+        SetBlockSignals(true);
         Input.ActionPress("ui_distant");
         GD.Print("pressed touch");
-        Disabled = true;
+        // Disabled = true;
         SetProcess(true);
         _timer.Start();
         _timeLabel.Show();
@@ -50,7 +53,7 @@ public class AbilityButton : TextureButton
     public void OnTimerTimeout()
     {
         // _cooldownText.Value = 0;
-        Disabled = false;
+        SetBlockSignals(false);
         _timeLabel.Hide();
         SetProcess(false);
     }

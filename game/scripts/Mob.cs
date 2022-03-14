@@ -8,6 +8,7 @@ namespace therorogame.scripts
         public bool Invicible = false;
         [Export()] public int MaxLife = 100;
         [Export] public int HealthGiver = 10;
+        [Export] public int MoneyGiver = 10;
         [Export()] public int Life = 100;
 
         public void MakeDamages(int damages)
@@ -27,6 +28,7 @@ namespace therorogame.scripts
             Events events = (Events) GetNode("/root/events");
             QueueFree();
             events.EmitSignal(nameof(Events.GiveHealth), HealthGiver);
+            events.EmitSignal(nameof(Events.GiveMoney), MoneyGiver);
         }
 
         public virtual async void GetDamages()

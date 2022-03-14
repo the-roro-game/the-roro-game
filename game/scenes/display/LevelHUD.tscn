@@ -16,17 +16,6 @@ pause_mode = 2
 script = ExtResource( 1 )
 button = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -10.0
-margin_right = 20.0
-margin_bottom = 10.0
-text = "Empty"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 64.0
 margin_top = 64.0
@@ -98,8 +87,6 @@ margin_bottom = 193.0
 ItemScene = ExtResource( 8 )
 
 [node name="AbilityButton" parent="." instance=ExtResource( 10 )]
-margin_left = 729.0
-margin_top = 492.0
-margin_right = 911.0
-margin_bottom = 674.0
+position = Vector2( 859, 487 )
+scale = Vector2( 2, 2 )
 CooldownTime = 0.2

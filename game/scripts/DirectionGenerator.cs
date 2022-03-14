@@ -13,7 +13,6 @@ public class DirectionGenerator : Node
     {
         screenSize = GetViewport().Size;
 
-        UpdateDirections();
     }
 
     public void UpdateDirections()
