@@ -1,9 +1,10 @@
 using Godot;
 using System;
 
-public class Bullet : Node2D
+public class Bullet : KinematicBody2D
 {
     const int Speed = 100;
+    public Vector2 Velocity = new Vector2(0, 0);
     private Sprite _sprite;
 
     public override void _Ready()
@@ -14,8 +15,12 @@ public class Bullet : Node2D
 
     public override void _Process(float delta)
     {
-        Position += Transform.x * Speed * delta;
         _sprite.RotationDegrees = (_sprite.RotationDegrees + 3) % 360;
+    }
+
+    public override void _PhysicsProcess(float delta)
+    {
+        MoveAndCollide(Velocity.Normalized() * delta * Speed);
     }
 
     public void OnScreenExited()

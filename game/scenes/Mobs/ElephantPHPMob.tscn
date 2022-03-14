@@ -36,7 +36,7 @@ Bullet_scene = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "PHP"
-frame = 10
+frame = 3
 playing = true
 
 [node name="ShootTimer" type="Timer" parent="."]
@@ -55,5 +55,8 @@ GroupTrigger = "player"
 position = Vector2( -12, 19 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
+[node name="BulletPosition" type="Position2D" parent="."]
+position = Vector2( 23.9593, 18.0542 )
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

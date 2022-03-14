@@ -10,6 +10,7 @@ public class Player : KinematicBody2D, Damageable
     private Vector2 ScreenSize;
 
     public bool IsInvincible = false;
+    public Vector2 FacingDirection = new Vector2(0, 0);
 
     public override void _Ready()
     {
@@ -26,6 +27,7 @@ public class Player : KinematicBody2D, Damageable
         Vector2 inputVector = Vector2.Zero;
         inputVector.x = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
         inputVector.y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
+        FacingDirection = inputVector;
         var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         if (inputVector != Vector2.Zero)
         {

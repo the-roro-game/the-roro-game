@@ -9,9 +9,7 @@ public class PlayerHurt : State
         GD.Print("hurt");
         Player player = GetOwner<Player>();
         player.IsInvincible = true;
-        // player.Velocity = Vector2.Zero;
         player.GetNode<AnimatedSprite>("AnimatedSprite").Animation = "idle";
-        // CallDeferred(nameof(EnterStatDeffered), player);
         StartHurt();
     }
 
@@ -52,7 +50,7 @@ public class PlayerHurt : State
     public override void ExitState()
     {
         Player player = GetOwner<Player>();
-        player.Velocity = Vector2.Zero;
+        // player.Velocity = Vector2.Zero;
         player.RotationDegrees = 0;
         player.IsInvincible = false;
         // CallDeferred(nameof(ExitStateDeffered), player);

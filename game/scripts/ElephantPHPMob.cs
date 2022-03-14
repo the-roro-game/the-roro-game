@@ -58,8 +58,12 @@ public class ElephantPHPMob : KinematicBody2D
     private void _on_ShootTimer_timeout()
     {
         if (state != "fire") return;
-        Node2D bullet = Bullet_scene.Instance<Node2D>();
-        AddChild(bullet);
+        Player player = GetTree().CurrentScene.GetNode<Player>("Player");
+        Bullet bullet = Bullet_scene.Instance<Bullet>();
+        bullet.Position = GetNode<Position2D>("BulletPosition").GlobalPosition;
+        bullet.Velocity = player.GlobalPosition - bullet.Position;
+        GetTree().CurrentScene.AddChild(bullet);
+        // GetParent().AddChild(bullet);
     }
 
 

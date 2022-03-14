@@ -14,4 +14,13 @@ public class PlayerRun : State
         //     StateMachine.TransitionTo("PlayerIdle");
         // }
     }
+
+    public override void Update(float _delta)
+    {
+        if (Input.IsActionJustPressed("ui_distant"))
+        {
+            StateMachine.TransitionTo("PlayerDistantAttack");
+
+        }
+    }
 }
