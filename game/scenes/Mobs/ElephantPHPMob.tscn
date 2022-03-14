@@ -27,14 +27,15 @@ radius = 8.0
 height = 0.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 13 )
+patrol_type = "loop"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "PHP"
-frame = 7
+frame = 6
 playing = true
 
 [node name="ShootTimer" type="Timer" parent="."]

@@ -18,6 +18,7 @@ animations = [ {
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 4 )
+patrol_type = "loop"
 
 [node name="Area2D" type="Area2D" parent="."]
 
