@@ -12,7 +12,16 @@ public class Chest : Node2D
     public override void _Ready()
     {
         ItemsManager im = (ItemsManager) GetNode(AutoloadPath.ITEMS_MANAGER);
-        item = im.GetRandomItem();
+        if (!opened)
+        {
+            item = im.GetRandomItem();
+        }
+
+        if (opened)
+        {
+            GetNode<AnimatedSprite>("sprite").Animation = "open";
+
+        }
     }
 
     public override void _Process(float delta)

@@ -13,8 +13,12 @@
 [ext_resource path="res://animations/PHPlephant/pixil-frame-0(2).png" type="Texture" id=11]
 [ext_resource path="res://scenes/InteractableTrigger.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/ElephantPHPMob.cs" type="Script" id=13]
-[ext_resource path="res://scripts/DamageTrigger.cs" type="Script" id=14]
+[ext_resource path="res://scenes/TriggerDamage.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/BossPat/MobBullet.tscn" type="PackedScene" id=15]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 24.0722
+height = 33.8599
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -24,19 +28,22 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 25.0
-height = 32.0
-
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["mobs"]]
 rotation = -0.00225843
+collision_mask = 2
 script = ExtResource( 13 )
 Bullet_scene = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -12.0429, 18.9728 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "PHP"
-frame = 3
+frame = 2
 playing = true
 
 [node name="ShootTimer" type="Timer" parent="."]
@@ -46,17 +53,12 @@ wait_time = 3.0
 position = Vector2( 245, 15 )
 scale = Vector2( 30, 4 )
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 14 )
-Damage = 10
-GroupTrigger = "player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -12, 19 )
-rotation = 1.5708
-shape = SubResource( 2 )
-
 [node name="BulletPosition" type="Position2D" parent="."]
 position = Vector2( 23.9593, 18.0542 )
+
+[node name="Area2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( -11.0209, 16.9543 )
+scale = Vector2( 0.783908, 0.42686 )
+GroupTrigger = "player"
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

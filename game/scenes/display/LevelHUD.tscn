@@ -98,7 +98,8 @@ margin_bottom = 193.0
 ItemScene = ExtResource( 8 )
 
 [node name="AbilityButton" parent="." instance=ExtResource( 10 )]
-position = Vector2( 888, 512 )
-scale = Vector2( 1.875, 1.98951 )
-action = "ui_distant"
-CooldownTime = 1.0
+margin_left = 729.0
+margin_top = 492.0
+margin_right = 911.0
+margin_bottom = 674.0
+CooldownTime = 0.2

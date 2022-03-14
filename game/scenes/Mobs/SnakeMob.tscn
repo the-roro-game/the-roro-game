@@ -7,7 +7,10 @@
 [ext_resource path="res://scripts/SnakeMob.cs" type="Script" id=5]
 [ext_resource path="res://scenes/InteractableTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://animations/Blue Snake/Snake 3.png" type="Texture" id=7]
-[ext_resource path="res://scripts/DamageTrigger.cs" type="Script" id=8]
+[ext_resource path="res://scenes/TriggerDamage.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 25.02
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,28 +25,27 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 27.074
-
-[node name="Snake" type="KinematicBody2D"]
+[node name="Snake" type="KinematicBody2D" groups=["mobs"]]
+collision_mask = 2
 script = ExtResource( 5 )
+
+[node name="Area2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -19, 29 )
+scale = Vector2( 0.439612, 0.376422 )
+Damage = 1
+GroupTrigger = "player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -18, 29 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "EvilSnake"
-frame = 3
+frame = 2
 playing = true
 
 [node name="TimerAttack" type="Timer" parent="."]
 
 [node name="Interactable" parent="." instance=ExtResource( 6 )]
 scale = Vector2( 12, 9 )
-
-[node name="Area2D" type="Area2D" parent="." groups=["mobs"]]
-script = ExtResource( 8 )
-Damage = 5
-GroupTrigger = "player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -16, 30 )
-shape = SubResource( 2 )

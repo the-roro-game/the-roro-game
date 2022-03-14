@@ -4,10 +4,7 @@
 [ext_resource path="res://animations/Crabe/Crabe 2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/InteractableTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/CrabMob.cs" type="Script" id=4]
-[ext_resource path="res://scripts/DamageTrigger.cs" type="Script" id=5]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 29, 39 )
+[ext_resource path="res://scenes/TriggerDamage.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,21 +14,18 @@ animations = [ {
 "speed": 3.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40, 29 )
+
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["mobs"]]
+collision_mask = 2
 script = ExtResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 5 )
-Damage = 50
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5, 5 )
+scale = Vector2( 0.739557, 0.530538 )
+Damage = 3
 GroupTrigger = "player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 3, 5 )
-rotation = 1.5708
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3, -3 )
@@ -43,3 +37,7 @@ playing = true
 
 [node name="Interactable" parent="." instance=ExtResource( 3 )]
 scale = Vector2( 20, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 5 )
+shape = SubResource( 3 )

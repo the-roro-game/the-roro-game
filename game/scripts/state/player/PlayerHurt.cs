@@ -9,6 +9,7 @@ public class PlayerHurt : State
         GD.Print("hurt");
         Player player = GetOwner<Player>();
         player.IsInvincible = true;
+        player.Speed = 200;
         player.GetNode<AnimatedSprite>("AnimatedSprite").Animation = "idle";
         StartHurt();
     }
@@ -34,7 +35,7 @@ public class PlayerHurt : State
         tween.Start();
         await ToSignal(tween, "tween_completed");
         tween.InterpolateProperty(player, "modulate:a", 0, 1, 0.3f);
-        
+
         tween.Start();
         await ToSignal(tween, "tween_completed");
         StateMachine.TransitionTo("PlayerIdle");
@@ -50,6 +51,8 @@ public class PlayerHurt : State
     public override void ExitState()
     {
         Player player = GetOwner<Player>();
+        player.Speed = 400;
+
         // player.Velocity = Vector2.Zero;
         player.RotationDegrees = 0;
         player.IsInvincible = false;

@@ -4,10 +4,13 @@
 [ext_resource path="res://arts/decor/book.png" type="Texture" id=2]
 
 [node name="PlayerBullet" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+Speed = 500
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.413965, 0.443702 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" parent="." index="1"]
+Damage = 50
 GroupTrigger = "mobs"

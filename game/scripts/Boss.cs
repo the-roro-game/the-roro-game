@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using therorogame.scripts;
 
-public class Boss : Node2D
+public class Boss : Mob
 {
     // Declare member variables here. Examples:
     // private int a = 2;
@@ -15,6 +16,16 @@ public class Boss : Node2D
     private Timer shoot_timer = null;
 
     // Called when the node enters the scene tree for the first time.
+    public override async void GetDamages()
+    {
+        Invicible = true;
+
+        GetNode<Sprite>("Sprite").Modulate = Colors.OrangeRed;
+        await ToSignal(GetTree().CreateTimer(2f), "timeout");
+        GetNode<Sprite>("Sprite").Modulate = Colors.White;
+        Invicible = false;
+    }
+
     public override void _Ready()
     {
         GD.Print("boss");
@@ -52,8 +63,8 @@ public class Boss : Node2D
         foreach (Node2D child in rotater.GetChildren())
         {
             Node2D bullet = Bullet_scene.Instance<Node2D>();
-            AddChild(bullet);
-            bullet.Position = child.Position;
+            GetTree().CurrentScene.AddChild(bullet);
+            bullet.Position = child.GlobalPosition;
             bullet.Rotation = child.GlobalRotation;
         }
     }

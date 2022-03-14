@@ -15,15 +15,20 @@ public class DamageTrigger : Node2D
 
     public void TriggerEnter(Node body)
     {
+        
       
         if (body is Damageable damageable)
         {
+            GD.Print("damageable");
+            // if (DeleteOnHit)
+            // {
+            //     GD.Print("remove ");
+            //
+            //     GetOwner<Node2D>().QueueFree();
+            // }
             if (body.IsInGroup(GroupTrigger) && damageable.CanTakeDamage())
             {
-                if (DeleteOnHit)
-                {
-                    GetOwner<Node2D>().QueueFree();
-                }
+                
                 damageable.MakeDamages(Damage);
 
                 

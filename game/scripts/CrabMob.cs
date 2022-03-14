@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using therorogame.scripts;
 
-public class CrabMob : KinematicBody2D
+public class CrabMob : Mob
 {
     
     private KinematicBody2D player = null;
