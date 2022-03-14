@@ -29,6 +29,7 @@ GroupTrigger = "player"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3, -3 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "crab"
 playing = true

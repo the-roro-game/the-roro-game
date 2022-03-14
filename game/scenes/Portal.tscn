@@ -9,13 +9,14 @@ z_index = -1
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 2 )
 frame = 1
 speed_scale = 0.5
 playing = true
 
 [node name="Interactable" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 6.48, 6.12 )
+position = Vector2( 1, 1 )
+scale = Vector2( 4, 3 )
 InteractName = "portal"
 GroupTrigger = "interactor"

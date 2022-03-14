@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://data/BaseLevel.cs" type="Script" id=1]
+[ext_resource path="res://scenes/levels/GrassLevel.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+LevelName = "Grass"
+LevelScene = ExtResource( 2 )

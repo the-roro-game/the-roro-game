@@ -41,6 +41,7 @@ scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "PHP"
 frame = 2
@@ -50,8 +51,8 @@ playing = true
 wait_time = 3.0
 
 [node name="Interactable" parent="." instance=ExtResource( 12 )]
-position = Vector2( 245, 15 )
-scale = Vector2( 30, 4 )
+position = Vector2( -4, 4 )
+scale = Vector2( 9, 2.5 )
 
 [node name="BulletPosition" type="Position2D" parent="."]
 position = Vector2( 23.9593, 18.0542 )

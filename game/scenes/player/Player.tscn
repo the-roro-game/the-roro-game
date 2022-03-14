@@ -12,8 +12,8 @@
 [ext_resource path="res://scripts/state/player/PlayerDistantAttack.cs" type="Script" id=10]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 60.2333
-height = 172.609
+radius = 11.6166
+height = 29.1017
 
 [node name="Player" type="KinematicBody2D" groups=["interactor", "player"]]
 position = Vector2( -1, 0 )
@@ -24,8 +24,10 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+Speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
 frames = ExtResource( 1 )
 animation = "up"
 
@@ -56,3 +58,6 @@ Bullet = ExtResource( 9 )
 
 [node name="FloatingTextGenerator" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, -100 )
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )

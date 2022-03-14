@@ -20,6 +20,9 @@ public class PossibleDirections
 public class LevelsManager : Node
 {
     private BaseLevel _currLevel;
+    
+    
+    
 
     public BaseLevel CurrLevel
     {
@@ -104,15 +107,19 @@ public class LevelsManager : Node
             while (filename != "")
             {
                 GD.Print(filename);
-                int RoomNb = Path.GetFileNameWithoutExtension(filename).ToInt();
-                if (IsValidRoom(RoomNb))
+                if (Path.GetFileNameWithoutExtension(filename).IsValidInteger())
                 {
-                    int x = RoomNb % WIDTH;
-                    int y = RoomNb / WIDTH;
-                    BaseLevel level = ResourceLoader.Load<BaseLevel>(RootLevelPath + "/" + filename);
-                    Map[y, x] = level;
-                }
+                    int RoomNb = Path.GetFileNameWithoutExtension(filename).ToInt();
+                    if (IsValidRoom(RoomNb))
+                    {
+                        int x = RoomNb % WIDTH;
+                        int y = RoomNb / WIDTH;
+                        BaseLevel level = ResourceLoader.Load<BaseLevel>(RootLevelPath + "/" + filename);
+                        Map[y, x] = level;
+                    }
 
+                }
+                
                 filename = dir.GetNext();
             }
 
@@ -147,7 +154,12 @@ public class LevelsManager : Node
         return room >= 0 && room <= MaxRoom();
     }
 
+    public void LoadByName(string name)
+    {
+        BaseLevel scene = ResourceLoader.Load<BaseLevel>(RootLevelPath + "/" + name+".tres");
+        CurrLevel = scene;
 
+    }
     public void LoadLevel(int x, int y)
     {
         Y = y;
