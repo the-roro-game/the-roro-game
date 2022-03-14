@@ -16,7 +16,6 @@ radius = 11.6166
 height = 29.1017
 
 [node name="Player" type="KinematicBody2D" groups=["interactor", "player"]]
-position = Vector2( -1, 0 )
 collision_layer = 4
 collision_mask = 26
 collision/safe_margin = 0.001
@@ -57,7 +56,8 @@ script = ExtResource( 10 )
 Bullet = ExtResource( 9 )
 
 [node name="FloatingTextGenerator" parent="." instance=ExtResource( 8 )]
-position = Vector2( 0, -100 )
+position = Vector2( 0, -50 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.25, 0.25 )
+zoom = Vector2( 0.5, 0.5 )

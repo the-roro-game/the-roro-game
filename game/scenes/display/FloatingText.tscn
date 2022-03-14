@@ -10,5 +10,6 @@ font_data = ExtResource( 2 )
 [node name="FloatingText" type="Label"]
 margin_right = 40.0
 margin_bottom = 20.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 1 )
 script = ExtResource( 1 )

@@ -70,7 +70,8 @@ valign = 1
 autowrap = true
 
 [node name="Interact" type="TouchScreenButton" parent="."]
-visible = false
+modulate = Color( 0.392157, 0.0745098, 0.223529, 1 )
+self_modulate = Color( 0.847059, 0, 0, 1 )
 position = Vector2( 1105, 567 )
 scale = Vector2( 0.253906, 0.25 )
 normal = ExtResource( 5 )

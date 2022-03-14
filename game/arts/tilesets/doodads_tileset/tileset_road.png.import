@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_doodads.png-cf6e5b9293cb914df661aea8c5903249.stex"
+path="res://.import/tileset_road.png-c462fa5c2daf0ce51c411c6de08a22d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/tilesets/doodads_tileset/tileset_doodads.png"
-dest_files=[ "res://.import/tileset_doodads.png-cf6e5b9293cb914df661aea8c5903249.stex" ]
+source_file="res://arts/tilesets/doodads_tileset/tileset_road.png"
+dest_files=[ "res://.import/tileset_road.png-c462fa5c2daf0ce51c411c6de08a22d9.stex" ]
 
 [params]
 

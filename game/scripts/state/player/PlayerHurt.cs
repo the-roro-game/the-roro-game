@@ -9,7 +9,7 @@ public class PlayerHurt : State
         GD.Print("hurt");
         Player player = GetOwner<Player>();
         player.IsInvincible = true;
-        player.Speed = 200;
+        player.Speed = player.BaseSpeed / 2;
         player.GetNode<AnimatedSprite>("AnimatedSprite").Animation = "idle";
         StartHurt();
     }
@@ -51,7 +51,7 @@ public class PlayerHurt : State
     public override void ExitState()
     {
         Player player = GetOwner<Player>();
-        player.Speed = 400;
+        player.Speed = player.BaseSpeed;
 
         // player.Velocity = Vector2.Zero;
         player.RotationDegrees = 0;

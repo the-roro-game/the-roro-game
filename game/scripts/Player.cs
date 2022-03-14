@@ -8,6 +8,7 @@ using therorogame.scripts;
 public class Player : KinematicBody2D, Damageable
 {
     [Export] public int Speed = 400;
+    public int BaseSpeed;
     private Vector2 ScreenSize;
 
     public bool IsInvincible = false;
@@ -15,6 +16,7 @@ public class Player : KinematicBody2D, Damageable
 
     public override void _Ready()
     {
+        BaseSpeed = Speed;
         Events events = (Events) GetNode(AutoloadPath.EVENTS_PATH);
         Global global = (Global) GetNode(AutoloadPath.GLOBAL_PATH);
         events.Connect(nameof(Events.CharacterChange), this, nameof(OnCharacterChange));

@@ -8,7 +8,7 @@
 [ext_resource path="res://arts/tilesets/stonecoast_tileset/stonecoast_tileset.png" type="Texture" id=9]
 [ext_resource path="res://arts/tilesets/grass_tileset/tileset_grass.png" type="Texture" id=10]
 [ext_resource path="res://arts/tilesets/water_tileset/tileset_water.png" type="Texture" id=11]
-[ext_resource path="res://arts/tilesets/road_tileset/tileset_road.png" type="Texture" id=12]
+[ext_resource path="res://arts/tilesets/doodads_tileset/tileset_road.png" type="Texture" id=12]
 [ext_resource path="res://arts/tilesets/dirt_tileset/tileset_dirt.png" type="Texture" id=13]
 [ext_resource path="res://arts/tilesets/stonecoast_tileset/stonecoast2_tileset.png" type="Texture" id=14]
 [ext_resource path="res://arts/tilesets/dungeon_tileset.png" type="Texture" id=15]
@@ -5609,4 +5609,4 @@ format = 1
 
 [node name="DirectionGenerator" type="Node" parent="."]
 script = ExtResource( 5 )
-DirectionScene = ExtResource( 4 )
+Portal = ExtResource( 4 )

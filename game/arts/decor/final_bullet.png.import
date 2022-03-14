@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_dist.png-59b4ad3b1f969604bcc5faba9300b448.stex"
+path="res://.import/final_bullet.png-e997ffea0b005bf5a683fbc481f4902a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/btn_dist.png"
-dest_files=[ "res://.import/btn_dist.png-59b4ad3b1f969604bcc5faba9300b448.stex" ]
+source_file="res://arts/decor/final_bullet.png"
+dest_files=[ "res://.import/final_bullet.png-e997ffea0b005bf5a683fbc481f4902a.stex" ]
 
 [params]
 
@@ -20,11 +20,11 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

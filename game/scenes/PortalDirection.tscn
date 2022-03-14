@@ -5,6 +5,3 @@
 
 [node name="PortalDirection" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-
-[node name="AnimatedSprite" parent="." index="0"]
-frame = 1

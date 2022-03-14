@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_road.png-065c13ab76d14b48bc77856114626b6c.stex"
+path="res://.import/first_bullet.png-d920d506e7f9f5df00b747dd8ab4f9f2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/tilesets/road_tileset/tileset_road.png"
-dest_files=[ "res://.import/tileset_road.png-065c13ab76d14b48bc77856114626b6c.stex" ]
+source_file="res://arts/decor/first_bullet.png"
+dest_files=[ "res://.import/first_bullet.png-d920d506e7f9f5df00b747dd8ab4f9f2.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
