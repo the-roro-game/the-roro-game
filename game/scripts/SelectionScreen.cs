@@ -14,7 +14,7 @@ namespace therorogame.scripts
 		public void OnCharacterChange(BaseCharacter character)
 		{
 			LevelsManager lm = (LevelsManager)GetNode("/root/lm");
-			lm.LoadLevel(0, 0);
+			lm.LoadByName("GrassLevel");
 		}
 	}
 }

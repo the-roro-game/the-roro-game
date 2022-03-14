@@ -6,7 +6,7 @@
 [ext_resource path="res://scripts/CrabMob.cs" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 29, 39 )
+extents = Vector2( 6, 10.5 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,7 +22,7 @@ script = ExtResource( 4 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 3, 5 )
+position = Vector2( 2.49999, 1 )
 rotation = 1.5708
 shape = SubResource( 2 )
 __meta__ = {
@@ -31,6 +31,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3, -3 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "crab"
 frame = 1
@@ -39,4 +40,5 @@ playing = true
 [node name="TimerAttack" type="Timer" parent="."]
 
 [node name="Interactable" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 20, 4 )
+position = Vector2( 6, 0 )
+scale = Vector2( 7, 2 )
