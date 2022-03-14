@@ -4,12 +4,16 @@
 [ext_resource path="res://scripts/NotificationItem.cs" type="Script" id=2]
 
 [node name="notification" type="HBoxContainer"]
-margin_right = 40.0
+margin_right = 1280.0
+margin_bottom = 64.0
+rect_scale = Vector2( 1.14749, 0.74057 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 2 )
 
 [node name="icon" type="TextureRect" parent="."]
 margin_right = 32.0
-margin_bottom = 32.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 1 )
 expand = true
@@ -17,10 +21,15 @@ stretch_mode = 1
 
 [node name="description" type="Label" parent="."]
 margin_left = 36.0
-margin_top = 6.0
-margin_right = 177.0
-margin_bottom = 26.0
+margin_right = 1280.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "basic description"
+autowrap = true
+percent_visible = 66.625
+max_lines_visible = 50
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
