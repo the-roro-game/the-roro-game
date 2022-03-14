@@ -20,7 +20,7 @@ namespace therorogame.scripts.levels
             await ToSignal(tween, "tween_all_completed");
 
             SpawnPlayer();
-            inst.CanHit = true;
+            inst.StartShooting();
         }
     }
 }

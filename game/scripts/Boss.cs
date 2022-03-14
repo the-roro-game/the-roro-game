@@ -46,7 +46,11 @@ public class Boss : Mob
             spawn.Rotation = pos.Angle();
             rotater.AddChild(spawn);
         }
+    }
 
+    public void StartShooting()
+    {
+        CanHit = true;
         shoot_timer.WaitTime = (float) Shooter_timer;
         shoot_timer.Start();
     }
