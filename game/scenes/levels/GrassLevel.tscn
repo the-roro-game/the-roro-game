@@ -138,6 +138,5 @@ position = Vector2( 1255, 597 )
 rotation = 1.59781
 
 [node name="KinematicBody2D" parent="Path2D9/PathFollow2D" index="0" instance=ExtResource( 5 )]
-patrol_type = "loop"
 
 [node name="Chest" parent="." index="17" instance=ExtResource( 6 )]
