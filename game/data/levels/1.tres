@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://scenes/levels/BossLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/CoastLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://data/BaseLevel.cs" type="Script" id=2]
 
 [resource]
