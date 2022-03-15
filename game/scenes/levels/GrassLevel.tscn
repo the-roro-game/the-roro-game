@@ -1,25 +1,23 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/levels/EmptyLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Mobs/CrabMob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Mobs/SnakeYMob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Mobs/SnakeMob.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Mobs/ElephantPHPMob.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Chest.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 152, 233, 0, 0, 0, 0, 152, 233, 0, 0, 0, 0, 193.083, 182.413, 0, 0, 0, 0, 207, 164, 0, 0, 0, 0, 262.432, 171.21, 0, 0, 0, 0, 286, 173, 0, 0, 0, 0, 152, 233, 0, 0, 0, 0, 218.835, 203.933 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 941, 86, 0, 0, 0, 0, 1057, 86, 0, 0, 0, 0, 1128, 80, 0, 0, 0, 0, 1027, 118, 0, 0, 0, 0, 941, 86, 0, 0, 0, 0, 1014, 113, 0, 0, 0, 0, 1040, 106, 0, 0, 0, 0, 941, 86 )
+"points": PoolVector2Array( 0, 0, 0, 0, 630, 473, 0, 0, 0, 0, 803, 381, 0, 0, 0, 0, 829, 550, 0, 0, 0, 0, 630, 473 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1255, 597, 0, 0, 0, 0, 1254, 634, 0, 0, 0, 0, 1242, 615, 0, 0, 0, 0, 1255, 597 )
+"points": PoolVector2Array( 0, 0, 0, 0, 925, 563, 0, 0, 0, 0, 954, 607, 0, 0, 0, 0, 907, 613, 0, 0, 0, 0, 925, 563 )
 }
 
 [node name="GrassLevel" instance=ExtResource( 1 )]
@@ -40,6 +38,7 @@ tile_data = PoolIntArray( -393224, 0, 0, -393223, 0, 0, -393222, 0, 0, -393221, 
 
 [node name="Collision" parent="." index="5"]
 position = Vector2( 2, 4 )
+z_index = -7
 tile_data = PoolIntArray( -65498, 1, 0, -65497, 1, 0, -65496, 1, 0, -65495, 1, 0, -65494, 1, 0, -65493, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 18, 1, 0, 35, 1, 0, 36, 1, 0, 37, 1, 0, 38, 1, 0, 43, 1, 0, 44, 1, 0, 45, 1, 0, 46, 1, 0, 47, 1, 0, 48, 1, 0, 59, 1, 0, 60, 1, 0, 61, 1, 0, 62, 1, 0, 68, 1, 0, 69, 1, 0, 70, 1, 0, 71, 1, 0, 72, 1, 0, 73, 1, 0, 74, 1, 0, 75, 1, 0, 76, 1, 0, 77, 1, 0, 78, 1, 0, 79, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 65566, 1, 0, 65567, 1, 0, 65568, 1, 0, 65569, 1, 0, 65570, 1, 0, 65571, 1, 0, 65572, 1, 0, 65573, 1, 0, 65574, 1, 0, 65575, 1, 0, 65577, 1, 0, 65578, 1, 0, 65579, 1, 0, 65580, 1, 0, 65581, 1, 0, 65582, 1, 0, 65583, 1, 0, 65584, 1, 0, 65585, 1, 0, 65586, 1, 0, 65587, 1, 0, 65588, 1, 0, 65589, 1, 0, 65590, 1, 0, 65591, 1, 0, 65592, 1, 0, 65593, 1, 0, 65594, 1, 0, 65595, 1, 0, 65596, 1, 0, 65597, 1, 0, 65598, 1, 0, 65599, 1, 0, 65600, 1, 0, 65601, 1, 0, 65602, 1, 0, 65603, 1, 0, 65606, 1, 0, 65607, 1, 0, 65608, 1, 0, 65611, 1, 0, 65613, 1, 0, 131073, 1, 0, 131151, 1, 0, 196609, 1, 0, 196681, 1, 0, 196687, 1, 0, 262145, 1, 0, 262197, 1, 0, 262223, 1, 0, 327681, 1, 0, 327733, 1, 0, 327759, 1, 0, 393217, 1, 0, 393295, 1, 0, 458753, 1, 0, 458821, 1, 0, 458831, 1, 0, 524289, 1, 0, 524367, 1, 0, 524368, 1, 0, 589825, 1, 0, 589898, 1, 0, 589903, 1, 0, 589904, 1, 0, 655361, 1, 0, 655388, 1, 0, 655440, 1, 0, 720897, 1, 0, 720976, 1, 0, 786433, 1, 0, 786511, 1, 0, 851969, 1, 0, 852003, 1, 0, 852043, 1, 0, 852047, 1, 0, 917505, 1, 0, 917583, 1, 0, 983041, 1, 0, 983119, 1, 0, 983120, 1, 0, 1048577, 1, 0, 1048655, 1, 0, 1048656, 1, 0, 1114113, 1, 0, 1114191, 1, 0, 1114192, 1, 0, 1179649, 1, 0, 1179728, 1, 0, 1245185, 1, 0, 1245197, 1, 0, 1245264, 1, 0, 1310721, 1, 0, 1310734, 1, 0, 1310799, 1, 0, 1310800, 1, 0, 1376257, 1, 0, 1376335, 1, 0, 1376336, 1, 0, 1441793, 1, 0, 1441851, 1, 0, 1441853, 1, 0, 1441872, 1, 0, 1507329, 1, 0, 1507407, 1, 0, 1507408, 1, 0, 1572865, 1, 0, 1572943, 1, 0, 1638401, 1, 0, 1638427, 1, 0, 1638479, 1, 0, 1703937, 1, 0, 1703968, 1, 0, 1704015, 1, 0, 1704016, 1, 0, 1769473, 1, 0, 1769477, 1, 0, 1769551, 1, 0, 1835009, 1, 0, 1835087, 1, 0, 1900545, 1, 0, 1900563, 1, 0, 1900623, 1, 0, 1966081, 1, 0, 1966144, 1, 0, 1966146, 1, 0, 1966159, 1, 0, 2031617, 1, 0, 2031629, 1, 0, 2031695, 1, 0, 2097153, 1, 0, 2097231, 1, 0, 2097232, 1, 0, 2097233, 1, 0, 2097234, 1, 0, 2162689, 1, 0, 2162767, 1, 0, 2162770, 1, 0, 2228225, 1, 0, 2228306, 1, 0, 2293761, 1, 0, 2293832, 1, 0, 2293842, 1, 0, 2359297, 1, 0, 2359378, 1, 0, 2424851, 1, 0, 2424894, 1, 0, 2424914, 1, 0, 2490369, 1, 0, 2490450, 1, 0, 2555905, 1, 0, 2555909, 1, 0, 2555986, 1, 0, 2621441, 1, 0, 2621522, 1, 0, 2686977, 1, 0, 2687058, 1, 0, 2752513, 1, 0, 2752594, 1, 0, 2818049, 1, 0, 2818129, 1, 0, 2818130, 1, 0, 2883585, 1, 0, 2883666, 1, 0, 2949121, 1, 0, 2949202, 1, 0, 2949203, 1, 0, 2949204, 1, 0, 3014657, 1, 0, 3014658, 1, 0, 3014659, 1, 0, 3014660, 1, 0, 3014661, 1, 0, 3014662, 1, 0, 3014663, 1, 0, 3014664, 1, 0, 3014665, 1, 0, 3014666, 1, 0, 3014667, 1, 0, 3014668, 1, 0, 3014669, 1, 0, 3014671, 1, 0, 3014673, 1, 0, 3014674, 1, 0, 3014675, 1, 0, 3014676, 1, 0, 3014677, 1, 0, 3014678, 1, 0, 3014679, 1, 0, 3014680, 1, 0, 3014681, 1, 0, 3014682, 1, 0, 3014683, 1, 0, 3014684, 1, 0, 3014685, 1, 0, 3014686, 1, 0, 3014687, 1, 0, 3014688, 1, 0, 3014690, 1, 0, 3014691, 1, 0, 3014692, 1, 0, 3014693, 1, 0, 3014694, 1, 0, 3014696, 1, 0, 3014697, 1, 0, 3014698, 1, 0, 3014699, 1, 0, 3014700, 1, 0, 3014701, 1, 0, 3014702, 1, 0, 3014704, 1, 0, 3014705, 1, 0, 3014707, 1, 0, 3014708, 1, 0, 3014709, 1, 0, 3014710, 1, 0, 3014712, 1, 0, 3014713, 1, 0, 3014714, 1, 0, 3014715, 1, 0, 3014716, 1, 0, 3014718, 1, 0, 3014720, 1, 0, 3014721, 1, 0, 3014722, 1, 0, 3014723, 1, 0, 3014724, 1, 0, 3014725, 1, 0, 3014726, 1, 0, 3014727, 1, 0, 3014728, 1, 0, 3014729, 1, 0, 3014730, 1, 0, 3014731, 1, 0, 3014732, 1, 0, 3014734, 1, 0, 3014735, 1, 0, 3014736, 1, 0, 3014738, 1, 0, 3014739, 1, 0, 3014740, 1, 0, 3080194, 1, 0, 3080195, 1, 0, 3080196, 1, 0, 3080198, 1, 0, 3080199, 1, 0, 3080200, 1, 0, 3080201, 1, 0, 3080202, 1, 0, 3080203, 1, 0, 3080204, 1, 0, 3080205, 1, 0, 3080206, 1, 0, 3080207, 1, 0, 3080208, 1, 0, 3080209, 1, 0, 3080211, 1, 0, 3080212, 1, 0, 3080213, 1, 0, 3080215, 1, 0, 3080216, 1, 0, 3080217, 1, 0, 3080218, 1, 0, 3080219, 1, 0, 3080220, 1, 0, 3080221, 1, 0, 3080222, 1, 0, 3080223, 1, 0, 3080224, 1, 0, 3080225, 1, 0, 3080226, 1, 0, 3080227, 1, 0, 3080230, 1, 0, 3080231, 1, 0, 3080232, 1, 0, 3080234, 1, 0, 3080239, 1, 0, 3080240, 1, 0, 3080241, 1, 0, 3080242, 1, 0, 3080243, 1, 0, 3080244, 1, 0, 3080246, 1, 0, 3080248, 1, 0, 3080249, 1, 0, 3080250, 1, 0, 3080251, 1, 0, 3080252, 1, 0, 3080254, 1, 0, 3080255, 1, 0, 3080256, 1, 0, 3080257, 1, 0, 3080258, 1, 0, 3080259, 1, 0, 3080260, 1, 0, 3080261, 1, 0, 3080262, 1, 0, 3080263, 1, 0, 3080264, 1, 0, 3080265, 1, 0, 3080266, 1, 0, 3080267, 1, 0, 3080268, 1, 0, 3080269, 1, 0, 3080270, 1, 0, 3080271, 1, 0, 3080272, 1, 0, 3080275, 1, 0, 3080276, 1, 0, 3145749, 1, 0, 3145770, 1, 0, 3145771, 1, 0, 3145772, 1, 0, 3145773, 1, 0, 3145774, 1, 0, 3145775, 1, 0, 3145782, 1, 0, 3145783, 1, 0, 3145784, 1, 0, 3145791, 1, 0, 3145792, 1, 0, 3145793, 1, 0, 3145803, 1, 0, 3145804, 1, 0 )
 
 [node name="Path2D4" type="Path2D" parent="." index="8"]
@@ -48,7 +47,7 @@ scale = Vector2( 1.03731, 1.30435 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D4" index="0"]
-position = Vector2( 259.618, 170.839 )
+position = Vector2( 259.614, 170.839 )
 offset = 140.52
 rotate = false
 
@@ -61,7 +60,7 @@ scale = Vector2( 1.03731, 1.30435 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D5" index="0"]
-position = Vector2( 259.618, 170.839 )
+position = Vector2( 259.614, 170.839 )
 offset = 140.52
 rotate = false
 
@@ -74,69 +73,74 @@ scale = Vector2( 1.03731, 1.30435 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D6" index="0"]
-position = Vector2( 259.618, 170.839 )
+position = Vector2( 259.614, 170.839 )
 offset = 140.52
 rotate = false
 
 [node name="KinematicBody2D" parent="Path2D6/PathFollow2D" index="0" instance=ExtResource( 2 )]
 position = Vector2( -101.865, 56.1019 )
 
-[node name="Path2D" type="Path2D" parent="." index="11"]
-curve = SubResource( 2 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2( 941, 86 )
-
-[node name="Snake" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
-
-[node name="Path2D2" type="Path2D" parent="." index="12"]
-position = Vector2( 29, 10 )
-curve = SubResource( 2 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
-position = Vector2( 941, 86 )
-
-[node name="Snake" parent="Path2D2/PathFollow2D" index="0" instance=ExtResource( 3 )]
-
-[node name="Path2D7" type="Path2D" parent="." index="13"]
+[node name="Path2D7" type="Path2D" parent="." index="11"]
 position = Vector2( -1, 181 )
 scale = Vector2( 1.03731, 1.30435 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D7" index="0"]
-position = Vector2( 259.618, 170.839 )
+position = Vector2( 259.614, 170.839 )
 offset = 140.52
 rotate = false
 
 [node name="KinematicBody2D" parent="Path2D7/PathFollow2D" index="0" instance=ExtResource( 2 )]
 position = Vector2( -101.865, 56.1019 )
 
+[node name="Path2D" type="Path2D" parent="." index="12"]
+curve = SubResource( 4 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2( 630, 473 )
+offset = 0.00109863
+rotate = false
+
+[node name="Snake" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
+[node name="Path2D2" type="Path2D" parent="." index="13"]
+position = Vector2( 0, 71 )
+curve = SubResource( 4 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
+position = Vector2( 630, 473 )
+offset = 0.00109863
+rotate = false
+
+[node name="Snake" parent="Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
 [node name="Path2D3" type="Path2D" parent="." index="14"]
-position = Vector2( -818, 463 )
-curve = SubResource( 2 )
+position = Vector2( 82, -11 )
+curve = SubResource( 4 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D3" index="0"]
-position = Vector2( 941, 86 )
+position = Vector2( 630, 473 )
+offset = 0.00109863
+rotate = false
 
-[node name="Snake" parent="Path2D3/PathFollow2D" index="0" instance=ExtResource( 3 )]
+[node name="Snake" parent="Path2D3/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
 [node name="Path2D8" type="Path2D" parent="." index="15"]
-position = Vector2( -800, 507 )
-curve = SubResource( 2 )
+position = Vector2( 71, 56 )
+curve = SubResource( 4 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D8" index="0"]
-position = Vector2( 941, 86 )
+position = Vector2( 630, 473 )
+offset = 0.00109863
+rotate = false
 
-[node name="Snake" parent="Path2D8/PathFollow2D" index="0" instance=ExtResource( 3 )]
-position = Vector2( 63, 30 )
+[node name="Snake" parent="Path2D8/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
 [node name="Path2D9" type="Path2D" parent="." index="16"]
-curve = SubResource( 3 )
+curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D9" index="0"]
-position = Vector2( 1255, 597 )
-rotation = 1.59781
+position = Vector2( 925, 563 )
+rotate = false
 
 [node name="KinematicBody2D" parent="Path2D9/PathFollow2D" index="0" instance=ExtResource( 5 )]
-
-[node name="Chest" parent="." index="17" instance=ExtResource( 6 )]
