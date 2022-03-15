@@ -1,10 +1,13 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/levels/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/display/LevelHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/PortalDirection.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/DirectionGenerator.cs" type="Script" id=5]
+[ext_resource path="res://arts/tilesets/colid.png" type="Texture" id=6]
+[ext_resource path="res://arts/tilesets/colision.png" type="Texture" id=7]
+[ext_resource path="res://arts/tilesets/stonecoast_tileset/pixil-frame-0 (2).png" type="Texture" id=8]
 [ext_resource path="res://arts/tilesets/stonecoast_tileset/stonecoast_tileset.png" type="Texture" id=9]
 [ext_resource path="res://arts/tilesets/grass_tileset/tileset_grass.png" type="Texture" id=10]
 [ext_resource path="res://arts/tilesets/water_tileset/tileset_water.png" type="Texture" id=11]
@@ -14,6 +17,7 @@
 [ext_resource path="res://arts/tilesets/dungeon_tileset.png" type="Texture" id=15]
 [ext_resource path="res://arts/tilesets/doodads_tileset/doodads_outside.png" type="Texture" id=16]
 [ext_resource path="res://arts/tilesets/vide.png" type="Texture" id=17]
+[ext_resource path="res://arts/tilesets/pixil-frame-0 (2).png" type="Texture" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=49]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -5264,6 +5268,34 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 215/shape_one_way_margin = 0.0
 215/shapes = [  ]
 215/z_index = 0
+216/name = "pixil-frame-0 (2).png 216"
+216/texture = ExtResource( 8 )
+216/tex_offset = Vector2( 0, 0 )
+216/modulate = Color( 1, 1, 1, 1 )
+216/region = Rect2( 128, 0, 32, 32 )
+216/tile_mode = 0
+216/occluder_offset = Vector2( 0, 0 )
+216/navigation_offset = Vector2( 0, 0 )
+216/shape_offset = Vector2( 0, 0 )
+216/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+216/shape_one_way = false
+216/shape_one_way_margin = 0.0
+216/shapes = [  ]
+216/z_index = 0
+217/name = "pixil-frame-0 (2).png 217"
+217/texture = ExtResource( 18 )
+217/tex_offset = Vector2( 0, 0 )
+217/modulate = Color( 1, 1, 1, 1 )
+217/region = Rect2( 192, 128, 32, 32 )
+217/tile_mode = 0
+217/occluder_offset = Vector2( 0, 0 )
+217/navigation_offset = Vector2( 0, 0 )
+217/shape_offset = Vector2( 0, 0 )
+217/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+217/shape_one_way = false
+217/shape_one_way_margin = 0.0
+217/shapes = [  ]
+217/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=94]
 points = PoolVector2Array( 57.3611, 30.9722, 8.75, 30.9722, 8.75, 0, 57.3611, 0 )
@@ -5968,7 +6000,7 @@ cell_size = Vector2( 32, 32 )
 format = 1
 
 [node name="DecorsBehind" type="TileMap" parent="."]
-z_index = 4
+z_index = 2
 tile_set = SubResource( 44 )
 cell_size = Vector2( 32, 32 )
 format = 1
