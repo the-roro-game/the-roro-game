@@ -1,12 +1,10 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scripts/levels/EmptyLevel.cs" type="Script" id=1]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/display/LevelHUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/PortalDirection.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/DirectionGenerator.cs" type="Script" id=5]
-[ext_resource path="res://arts/tilesets/colid.png" type="Texture" id=6]
-[ext_resource path="res://arts/tilesets/colision.png" type="Texture" id=7]
 [ext_resource path="res://arts/tilesets/stonecoast_tileset/stonecoast_tileset.png" type="Texture" id=9]
 [ext_resource path="res://arts/tilesets/grass_tileset/tileset_grass.png" type="Texture" id=10]
 [ext_resource path="res://arts/tilesets/water_tileset/tileset_water.png" type="Texture" id=11]
@@ -16,6 +14,90 @@
 [ext_resource path="res://arts/tilesets/dungeon_tileset.png" type="Texture" id=15]
 [ext_resource path="res://arts/tilesets/doodads_tileset/doodads_outside.png" type="Texture" id=16]
 [ext_resource path="res://arts/tilesets/vide.png" type="Texture" id=17]
+
+[sub_resource type="ConvexPolygonShape2D" id=49]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=50]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=51]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=52]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=54]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=55]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=56]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=57]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=58]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=59]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=60]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=61]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=62]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=63]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=64]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=65]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=66]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=67]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=68]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=69]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=70]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=71]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=72]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=73]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=74]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=75]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=76]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=77]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=4]
 0/name = "stonecoast_tileset.png 0"
@@ -3832,9 +3914,16 @@
 165/navigation_offset = Vector2( 0, 0 )
 165/shape_offset = Vector2( 0, 0 )
 165/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+165/shape = SubResource( 49 )
 165/shape_one_way = false
-165/shape_one_way_margin = 0.0
-165/shapes = [  ]
+165/shape_one_way_margin = 1.0
+165/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 49 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 165/z_index = 0
 166/name = "dungeon_tileset.png 166"
 166/texture = ExtResource( 15 )
@@ -3855,9 +3944,16 @@
 166/navigation_offset = Vector2( 0, 0 )
 166/shape_offset = Vector2( 0, 0 )
 166/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+166/shape = SubResource( 50 )
 166/shape_one_way = false
-166/shape_one_way_margin = 0.0
-166/shapes = [  ]
+166/shape_one_way_margin = 1.0
+166/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 50 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 166/z_index = 0
 167/name = "dungeon_tileset.png 167"
 167/texture = ExtResource( 15 )
@@ -3878,9 +3974,16 @@
 167/navigation_offset = Vector2( 0, 0 )
 167/shape_offset = Vector2( 0, 0 )
 167/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+167/shape = SubResource( 51 )
 167/shape_one_way = false
-167/shape_one_way_margin = 0.0
-167/shapes = [  ]
+167/shape_one_way_margin = 1.0
+167/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 51 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 167/z_index = 0
 168/name = "dungeon_tileset.png 168"
 168/texture = ExtResource( 15 )
@@ -3901,9 +4004,16 @@
 168/navigation_offset = Vector2( 0, 0 )
 168/shape_offset = Vector2( 0, 0 )
 168/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+168/shape = SubResource( 52 )
 168/shape_one_way = false
-168/shape_one_way_margin = 0.0
-168/shapes = [  ]
+168/shape_one_way_margin = 1.0
+168/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 52 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 168/z_index = 0
 169/name = "dungeon_tileset.png 169"
 169/texture = ExtResource( 15 )
@@ -3947,9 +4057,16 @@
 170/navigation_offset = Vector2( 0, 0 )
 170/shape_offset = Vector2( 0, 0 )
 170/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+170/shape = SubResource( 54 )
 170/shape_one_way = false
-170/shape_one_way_margin = 0.0
-170/shapes = [  ]
+170/shape_one_way_margin = 1.0
+170/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 54 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 170/z_index = 0
 171/name = "dungeon_tileset.png 171"
 171/texture = ExtResource( 15 )
@@ -3970,9 +4087,16 @@
 171/navigation_offset = Vector2( 0, 0 )
 171/shape_offset = Vector2( 0, 0 )
 171/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+171/shape = SubResource( 55 )
 171/shape_one_way = false
-171/shape_one_way_margin = 0.0
-171/shapes = [  ]
+171/shape_one_way_margin = 1.0
+171/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 55 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 171/z_index = 0
 172/name = "dungeon_tileset.png 172"
 172/texture = ExtResource( 15 )
@@ -3993,9 +4117,16 @@
 172/navigation_offset = Vector2( 0, 0 )
 172/shape_offset = Vector2( 0, 0 )
 172/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+172/shape = SubResource( 56 )
 172/shape_one_way = false
-172/shape_one_way_margin = 0.0
-172/shapes = [  ]
+172/shape_one_way_margin = 1.0
+172/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 56 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 172/z_index = 0
 173/name = "dungeon_tileset.png 173"
 173/texture = ExtResource( 15 )
@@ -4016,9 +4147,16 @@
 173/navigation_offset = Vector2( 0, 0 )
 173/shape_offset = Vector2( 0, 0 )
 173/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+173/shape = SubResource( 57 )
 173/shape_one_way = false
-173/shape_one_way_margin = 0.0
-173/shapes = [  ]
+173/shape_one_way_margin = 1.0
+173/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 57 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 173/z_index = 0
 174/name = "dungeon_tileset.png 174"
 174/texture = ExtResource( 15 )
@@ -4039,9 +4177,16 @@
 174/navigation_offset = Vector2( 0, 0 )
 174/shape_offset = Vector2( 0, 0 )
 174/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+174/shape = SubResource( 58 )
 174/shape_one_way = false
-174/shape_one_way_margin = 0.0
-174/shapes = [  ]
+174/shape_one_way_margin = 1.0
+174/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 58 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 174/z_index = 0
 175/name = "dungeon_tileset.png 175"
 175/texture = ExtResource( 15 )
@@ -4062,9 +4207,16 @@
 175/navigation_offset = Vector2( 0, 0 )
 175/shape_offset = Vector2( 0, 0 )
 175/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+175/shape = SubResource( 59 )
 175/shape_one_way = false
-175/shape_one_way_margin = 0.0
-175/shapes = [  ]
+175/shape_one_way_margin = 1.0
+175/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 59 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 175/z_index = 0
 176/name = "dungeon_tileset.png 176"
 176/texture = ExtResource( 15 )
@@ -4085,9 +4237,16 @@
 176/navigation_offset = Vector2( 0, 0 )
 176/shape_offset = Vector2( 0, 0 )
 176/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+176/shape = SubResource( 60 )
 176/shape_one_way = false
-176/shape_one_way_margin = 0.0
-176/shapes = [  ]
+176/shape_one_way_margin = 1.0
+176/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 60 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 176/z_index = 0
 177/name = "dungeon_tileset.png 177"
 177/texture = ExtResource( 15 )
@@ -4108,9 +4267,16 @@
 177/navigation_offset = Vector2( 0, 0 )
 177/shape_offset = Vector2( 0, 0 )
 177/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+177/shape = SubResource( 61 )
 177/shape_one_way = false
-177/shape_one_way_margin = 0.0
-177/shapes = [  ]
+177/shape_one_way_margin = 1.0
+177/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 61 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 177/z_index = 0
 178/name = "dungeon_tileset.png 178"
 178/texture = ExtResource( 15 )
@@ -4131,9 +4297,16 @@
 178/navigation_offset = Vector2( 0, 0 )
 178/shape_offset = Vector2( 0, 0 )
 178/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+178/shape = SubResource( 62 )
 178/shape_one_way = false
-178/shape_one_way_margin = 0.0
-178/shapes = [  ]
+178/shape_one_way_margin = 1.0
+178/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 62 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 178/z_index = 0
 179/name = "dungeon_tileset.png 179"
 179/texture = ExtResource( 15 )
@@ -4154,9 +4327,16 @@
 179/navigation_offset = Vector2( 0, 0 )
 179/shape_offset = Vector2( 0, 0 )
 179/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+179/shape = SubResource( 63 )
 179/shape_one_way = false
-179/shape_one_way_margin = 0.0
-179/shapes = [  ]
+179/shape_one_way_margin = 1.0
+179/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 63 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 179/z_index = 0
 180/name = "dungeon_tileset.png 180"
 180/texture = ExtResource( 15 )
@@ -4177,9 +4357,16 @@
 180/navigation_offset = Vector2( 0, 0 )
 180/shape_offset = Vector2( 0, 0 )
 180/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+180/shape = SubResource( 64 )
 180/shape_one_way = false
-180/shape_one_way_margin = 0.0
-180/shapes = [  ]
+180/shape_one_way_margin = 1.0
+180/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 64 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 180/z_index = 0
 181/name = "dungeon_tileset.png 181"
 181/texture = ExtResource( 15 )
@@ -4200,9 +4387,16 @@
 181/navigation_offset = Vector2( 0, 0 )
 181/shape_offset = Vector2( 0, 0 )
 181/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+181/shape = SubResource( 65 )
 181/shape_one_way = false
-181/shape_one_way_margin = 0.0
-181/shapes = [  ]
+181/shape_one_way_margin = 1.0
+181/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 65 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 181/z_index = 0
 182/name = "dungeon_tileset.png 182"
 182/texture = ExtResource( 15 )
@@ -4223,9 +4417,16 @@
 182/navigation_offset = Vector2( 0, 0 )
 182/shape_offset = Vector2( 0, 0 )
 182/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+182/shape = SubResource( 66 )
 182/shape_one_way = false
-182/shape_one_way_margin = 0.0
-182/shapes = [  ]
+182/shape_one_way_margin = 1.0
+182/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 66 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 182/z_index = 0
 183/name = "dungeon_tileset.png 183"
 183/texture = ExtResource( 15 )
@@ -4246,9 +4447,16 @@
 183/navigation_offset = Vector2( 0, 0 )
 183/shape_offset = Vector2( 0, 0 )
 183/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+183/shape = SubResource( 67 )
 183/shape_one_way = false
-183/shape_one_way_margin = 0.0
-183/shapes = [  ]
+183/shape_one_way_margin = 1.0
+183/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 67 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 183/z_index = 0
 184/name = "dungeon_tileset.png 184"
 184/texture = ExtResource( 15 )
@@ -4269,9 +4477,16 @@
 184/navigation_offset = Vector2( 0, 0 )
 184/shape_offset = Vector2( 0, 0 )
 184/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+184/shape = SubResource( 68 )
 184/shape_one_way = false
-184/shape_one_way_margin = 0.0
-184/shapes = [  ]
+184/shape_one_way_margin = 1.0
+184/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 68 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 184/z_index = 0
 185/name = "dungeon_tileset.png 185"
 185/texture = ExtResource( 15 )
@@ -4292,9 +4507,16 @@
 185/navigation_offset = Vector2( 0, 0 )
 185/shape_offset = Vector2( 0, 0 )
 185/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+185/shape = SubResource( 69 )
 185/shape_one_way = false
-185/shape_one_way_margin = 0.0
-185/shapes = [  ]
+185/shape_one_way_margin = 1.0
+185/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 69 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 185/z_index = 0
 186/name = "dungeon_tileset.png 186"
 186/texture = ExtResource( 15 )
@@ -4315,9 +4537,16 @@
 186/navigation_offset = Vector2( 0, 0 )
 186/shape_offset = Vector2( 0, 0 )
 186/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+186/shape = SubResource( 70 )
 186/shape_one_way = false
-186/shape_one_way_margin = 0.0
-186/shapes = [  ]
+186/shape_one_way_margin = 1.0
+186/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 70 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 186/z_index = 0
 187/name = "dungeon_tileset.png 187"
 187/texture = ExtResource( 15 )
@@ -4338,9 +4567,16 @@
 187/navigation_offset = Vector2( 0, 0 )
 187/shape_offset = Vector2( 0, 0 )
 187/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+187/shape = SubResource( 71 )
 187/shape_one_way = false
-187/shape_one_way_margin = 0.0
-187/shapes = [  ]
+187/shape_one_way_margin = 1.0
+187/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 71 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 187/z_index = 0
 188/name = "dungeon_tileset.png 188"
 188/texture = ExtResource( 15 )
@@ -4361,9 +4597,16 @@
 188/navigation_offset = Vector2( 0, 0 )
 188/shape_offset = Vector2( 0, 0 )
 188/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+188/shape = SubResource( 72 )
 188/shape_one_way = false
-188/shape_one_way_margin = 0.0
-188/shapes = [  ]
+188/shape_one_way_margin = 1.0
+188/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 72 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 188/z_index = 0
 189/name = "dungeon_tileset.png 189"
 189/texture = ExtResource( 15 )
@@ -4384,9 +4627,16 @@
 189/navigation_offset = Vector2( 0, 0 )
 189/shape_offset = Vector2( 0, 0 )
 189/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+189/shape = SubResource( 73 )
 189/shape_one_way = false
-189/shape_one_way_margin = 0.0
-189/shapes = [  ]
+189/shape_one_way_margin = 1.0
+189/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 73 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 189/z_index = 0
 190/name = "dungeon_tileset.png 190"
 190/texture = ExtResource( 15 )
@@ -4614,9 +4864,16 @@
 199/navigation_offset = Vector2( 0, 0 )
 199/shape_offset = Vector2( 0, 0 )
 199/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+199/shape = SubResource( 74 )
 199/shape_one_way = false
-199/shape_one_way_margin = 0.0
-199/shapes = [  ]
+199/shape_one_way_margin = 1.0
+199/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 74 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 199/z_index = 0
 200/name = "dungeon_tileset.png 200"
 200/texture = ExtResource( 15 )
@@ -4637,9 +4894,16 @@
 200/navigation_offset = Vector2( 0, 0 )
 200/shape_offset = Vector2( 0, 0 )
 200/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+200/shape = SubResource( 75 )
 200/shape_one_way = false
-200/shape_one_way_margin = 0.0
-200/shapes = [  ]
+200/shape_one_way_margin = 1.0
+200/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 75 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 200/z_index = 0
 201/name = "dungeon_tileset.png 201"
 201/texture = ExtResource( 15 )
@@ -4660,9 +4924,16 @@
 201/navigation_offset = Vector2( 0, 0 )
 201/shape_offset = Vector2( 0, 0 )
 201/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+201/shape = SubResource( 76 )
 201/shape_one_way = false
-201/shape_one_way_margin = 0.0
-201/shapes = [  ]
+201/shape_one_way_margin = 1.0
+201/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 76 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 201/z_index = 0
 202/name = "dungeon_tileset.png 202"
 202/texture = ExtResource( 15 )
@@ -4683,9 +4954,16 @@
 202/navigation_offset = Vector2( 0, 0 )
 202/shape_offset = Vector2( 0, 0 )
 202/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+202/shape = SubResource( 77 )
 202/shape_one_way = false
-202/shape_one_way_margin = 0.0
-202/shapes = [  ]
+202/shape_one_way_margin = 1.0
+202/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 77 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 202/z_index = 0
 203/name = "dungeon_tileset.png 203"
 203/texture = ExtResource( 15 )
@@ -4987,6 +5265,54 @@
 215/shapes = [  ]
 215/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=94]
+points = PoolVector2Array( 57.3611, 30.9722, 8.75, 30.9722, 8.75, 0, 57.3611, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=95]
+points = PoolVector2Array( 28.7778, 27.5, 3.08331, 27.5, 3.08331, 3.19446, 28.7778, 3.19446 )
+
+[sub_resource type="ConvexPolygonShape2D" id=80]
+points = PoolVector2Array( 52.3611, 59.4444, 12.0834, 59.4444, 12.0834, 45.5556, 52.3611, 45.5556 )
+
+[sub_resource type="ConvexPolygonShape2D" id=81]
+points = PoolVector2Array( 64, 36.4167, 19.8611, 39.1944, 21.25, 10.7223, 61.5278, 12.8056 )
+
+[sub_resource type="ConvexPolygonShape2D" id=82]
+points = PoolVector2Array( 45.4444, 64, 3.77777, 64, 3.77777, 41.9723, 45.4444, 41.9723 )
+
+[sub_resource type="ConvexPolygonShape2D" id=96]
+points = PoolVector2Array( 62, 30.1667, 18.9444, 30.1667, 18.9444, 5.86111, 62, 5.86111 )
+
+[sub_resource type="ConvexPolygonShape2D" id=97]
+points = PoolVector2Array( 48.6945, 30.8611, 10.5, 30.8611, 10.5, 1.69443, 48.6945, 1.69443 )
+
+[sub_resource type="ConvexPolygonShape2D" id=85]
+points = PoolVector2Array( 59, 52.3889, 5.52777, 52.3889, 5.52777, 31.5556, 59, 31.5556 )
+
+[sub_resource type="ConvexPolygonShape2D" id=86]
+points = PoolVector2Array( 56.8055, 51.6944, 6.11108, 51.6944, 6.11108, 30.1667, 56.8055, 30.1667 )
+
+[sub_resource type="ConvexPolygonShape2D" id=87]
+points = PoolVector2Array( 62.25, 46.8333, 12.25, 46.8333, 12.25, 38.5, 62.25, 38.5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=88]
+points = PoolVector2Array( 32, 32, 1.63885, 32, 1.63885, 9.44446, 32, 9.44446 )
+
+[sub_resource type="ConvexPolygonShape2D" id=89]
+points = PoolVector2Array( 32, 32, 1.58331, 32, 1.58331, 15, 32, 15 )
+
+[sub_resource type="ConvexPolygonShape2D" id=90]
+points = PoolVector2Array( 61.8333, 60.8333, 2.11108, 60.8333, 2.11108, 36.5278, 61.8333, 36.5278 )
+
+[sub_resource type="ConvexPolygonShape2D" id=91]
+points = PoolVector2Array( 61.0278, 58.0556, 6.86108, 58.0556, 6.86108, 41.3889, 61.0278, 41.3889 )
+
+[sub_resource type="ConvexPolygonShape2D" id=92]
+points = PoolVector2Array( 56.75, 60.1389, 9.52777, 60.1389, 9.52777, 38.6111, 56.75, 38.6111 )
+
+[sub_resource type="ConvexPolygonShape2D" id=93]
+points = PoolVector2Array( 54.5555, 58.0556, 15.6666, 58.0556, 15.6666, 42.0833, 54.5555, 42.0833 )
+
 [sub_resource type="TileSet" id=44]
 0/name = "doodads_outside.png 0"
 0/texture = ExtResource( 16 )
@@ -4998,9 +5324,16 @@
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 94 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 94 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
 1/name = "doodads_outside.png 1"
 1/texture = ExtResource( 16 )
@@ -5012,9 +5345,16 @@
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 95 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "doodads_outside.png 2"
 2/texture = ExtResource( 16 )
@@ -5026,9 +5366,16 @@
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 88 )
 2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 88 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "doodads_outside.png 3"
 3/texture = ExtResource( 16 )
@@ -5040,9 +5387,16 @@
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 89 )
 3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 89 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
 4/name = "doodads_outside.png 4"
 4/texture = ExtResource( 16 )
@@ -5082,9 +5436,16 @@
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 90 )
 6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 90 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 6/z_index = 0
 7/name = "doodads_outside.png 7"
 7/texture = ExtResource( 16 )
@@ -5096,9 +5457,16 @@
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 91 )
 7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 91 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 7/z_index = 0
 8/name = "doodads_outside.png 8"
 8/texture = ExtResource( 16 )
@@ -5110,9 +5478,16 @@
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 92 )
 8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 92 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 8/z_index = 0
 9/name = "doodads_outside.png 9"
 9/texture = ExtResource( 16 )
@@ -5124,9 +5499,16 @@
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 93 )
 9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 93 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 9/z_index = 0
 10/name = "doodads_outside.png 10"
 10/texture = ExtResource( 16 )
@@ -5138,9 +5520,16 @@
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 80 )
 10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 80 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 10/z_index = 0
 11/name = "doodads_outside.png 11"
 11/texture = ExtResource( 16 )
@@ -5152,9 +5541,16 @@
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 81 )
 11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 81 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 11/z_index = 0
 12/name = "doodads_outside.png 12"
 12/texture = ExtResource( 16 )
@@ -5166,9 +5562,16 @@
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape = SubResource( 82 )
 12/shape_one_way = false
-12/shape_one_way_margin = 0.0
-12/shapes = [  ]
+12/shape_one_way_margin = 1.0
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 82 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 12/z_index = 0
 13/name = "doodads_outside.png 13"
 13/texture = ExtResource( 16 )
@@ -5180,9 +5583,16 @@
 13/navigation_offset = Vector2( 0, 0 )
 13/shape_offset = Vector2( 0, 0 )
 13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape = SubResource( 96 )
 13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
+13/shape_one_way_margin = 1.0
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 13/z_index = 0
 14/name = "doodads_outside.png 14"
 14/texture = ExtResource( 16 )
@@ -5194,9 +5604,16 @@
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 97 )
 14/shape_one_way = false
-14/shape_one_way_margin = 0.0
-14/shapes = [  ]
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 14/z_index = 0
 15/name = "doodads_outside.png 15"
 15/texture = ExtResource( 16 )
@@ -5208,9 +5625,16 @@
 15/navigation_offset = Vector2( 0, 0 )
 15/shape_offset = Vector2( 0, 0 )
 15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape = SubResource( 85 )
 15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
+15/shape_one_way_margin = 1.0
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 85 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 15/z_index = 0
 16/name = "doodads_outside.png 16"
 16/texture = ExtResource( 16 )
@@ -5222,9 +5646,16 @@
 16/navigation_offset = Vector2( 0, 0 )
 16/shape_offset = Vector2( 0, 0 )
 16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 86 )
 16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 16/z_index = 0
 17/name = "doodads_outside.png 17"
 17/texture = ExtResource( 16 )
@@ -5236,9 +5667,16 @@
 17/navigation_offset = Vector2( 0, 0 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 87 )
 17/shape_one_way = false
-17/shape_one_way_margin = 0.0
-17/shapes = [  ]
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 17/z_index = 0
 18/name = "doodads_outside.png 18"
 18/texture = ExtResource( 16 )
@@ -5510,98 +5948,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 2/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=50]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=51]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=52]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=53]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=54]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="TileSet" id=49]
-0/name = "colid.png 0"
-0/texture = ExtResource( 6 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 32, 32 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 50 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 50 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 51 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "colision.png 1"
-1/texture = ExtResource( 7 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 52 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 52 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-2/name = "colision.png 2"
-2/texture = ExtResource( 7 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 32, 32 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 53 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 53 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 54 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
-
 [node name="EmptyLevel" type="Node2D"]
 script = ExtResource( 1 )
 CharacterScene = ExtResource( 2 )
@@ -5631,11 +5977,6 @@ format = 1
 z_index = -3
 tile_set = SubResource( 47 )
 cell_size = Vector2( 32, 32 )
-format = 1
-
-[node name="Collision" type="TileMap" parent="."]
-tile_set = SubResource( 49 )
-cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="LevelHUD" parent="." instance=ExtResource( 3 )]

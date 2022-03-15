@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/Mobs/CrabMob.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/CrabMob.cs" type="Script" id=2]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -15,7 +14,5 @@ curve = SubResource( 3 )
 position = Vector2( 595, 515 )
 rotate = false
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="PathFollow2D" groups=["mobs"] instance=ExtResource( 1 )]
-collision_mask = 2
-script = ExtResource( 2 )
+[node name="KinematicBody2D" parent="PathFollow2D" instance=ExtResource( 1 )]
 patrol_type = "loop"

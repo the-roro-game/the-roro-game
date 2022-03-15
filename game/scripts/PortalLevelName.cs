@@ -9,7 +9,7 @@ namespace therorogame.scripts
         public override void TpBehaviour()
         {
             LevelsManager lm = (LevelsManager) GetNode(AutoloadPath.LEVELS_MANAGER);
-            //load level by name
+            lm.LoadByName(LevelName);
         }
     }
 }

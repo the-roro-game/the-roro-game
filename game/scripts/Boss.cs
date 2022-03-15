@@ -82,4 +82,18 @@ public class Boss : Mob
         float new_rotation = rotater.RotationDegrees + Rotate_speed * delta;
         rotater.RotationDegrees = new_rotation % 360;
     }
+
+    public override async void Death()
+    {
+        Events events = (Events) GetNode("/root/events");
+        Tween tween = new Tween();
+        AddChild(tween);
+        tween.InterpolateProperty(this, "scale", Scale, new Vector2(0, 0), 2f);
+        tween.InterpolateProperty(this, "rotation_degrees", RotationDegrees, 360, 2f);
+        tween.Start();
+        await ToSignal(tween, "tween_all_completed");
+        events.EmitSignal(nameof(Events.GiveHealth), HealthGiver);
+        events.EmitSignal(nameof(Events.GiveMoney), MoneyGiver);
+        QueueFree();
+    }
 }

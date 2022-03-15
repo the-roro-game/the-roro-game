@@ -37,14 +37,13 @@ Bullet_scene = ExtResource( 15 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -12.0429, 18.9728 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 6.01181, 4.07538 )
+scale = Vector2( 1.06576, 0.672572 )
 frames = SubResource( 1 )
 animation = "PHP"
-frame = 2
 playing = true
 
 [node name="ShootTimer" type="Timer" parent="."]
