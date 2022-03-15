@@ -15,6 +15,8 @@ public class Boss : Mob
     private Node2D rotater = null;
     private Timer shoot_timer = null;
     public bool CanHit = false;
+    [Export()] public PackedScene Portal;
+
 
     // Called when the node enters the scene tree for the first time.
     public override async void GetDamages()
@@ -94,6 +96,10 @@ public class Boss : Mob
         await ToSignal(tween, "tween_all_completed");
         events.EmitSignal(nameof(Events.GiveHealth), HealthGiver);
         events.EmitSignal(nameof(Events.GiveMoney), MoneyGiver);
+        PortalLevelName portal = Portal.Instance<PortalLevelName>();
+        portal.LevelName = "Final";
+        GetTree().CurrentScene.AddChild(portal);
+        portal.GlobalPosition = GlobalPosition;
         QueueFree();
     }
 }
